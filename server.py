@@ -12,7 +12,7 @@ from flask import (Flask, render_template, redirect, request, flash, session, js
 
 from flask_debugtoolbar import DebugToolbarExtension
 
-from model import (connect_to_db, db, User, Article, UserArticle, Phrase, Note, UserCategoryPreference, Category)
+from model import (connect_to_db, db, User, Article, UserArticle, Phrase, Note, UserCategoryPreference, Category, Comment)
 
 import requests 
 # This allows you to access the variables store in the environment on your 
@@ -275,15 +275,31 @@ def check_comments():
 
     start = request.form.get('start')
     end = request.form.get('end')
+    article_id = session.get('article_id')
 
-    comment1= 'Here is the comment from the server!'
+    phrase_key = (article_id, start, end)
 
-    user_name1='secondUser'
-    image1 = '/static/img/ParrotLogo.png'
+    print phrase_key
 
-    commentData = [{'userName': user_name1, 'userComment': comment1, 'userImage': image1}]
-    print "\n\n\n\n\n\n %s \n\n\n\n\n\n" % commentData
-    return jsonify(commentData=commentData)
+    #This returns a list of comments associated with the comment key. 
+    comments = Comment.query.filter(Comment.phrase_id==phrase_key).all()
+
+    print comments
+
+    comment_data = []
+
+    for comment in comments: 
+        comment_dict={}
+        comment_dict['userName'] = comment.user.username
+        comment_dict['userComment'] = comment.comment
+        comment_dict['userImage'] = comment.user.image
+        comment_data.append(comment_dict)
+    
+    session["start"] = start
+    session["end"] = end
+    
+    print "\n\n\n\n\n\n %s \n\n\n\n\n\n" % comment_data
+    return jsonify(commentData=comment_data)
 
 
 
@@ -291,16 +307,27 @@ def check_comments():
 def test_comments():
     comment = request.form.get('comment')
 
-    #Add the comment to the database. 
+    #Comment Location data
+    start = session.get('start')
+    end = session.get('end')
+    article_id = session.get('article_id')
+
     user_id = session.get('user_id')
+
+    phrase_key = (article_id, start, end)
+    
+    new_comment = Comment(phrase_id = phrase_key,       
+                            user_id=user_id, article_id=article_id, 
+                            comment=comment)
+    db.session.add(new_comment)
+    db.session.commit()
     
     user = User.query.get(user_id)
-    
+
     user_name=user.first_name
 
-    image = '/static/img/DaisyProfile.gif'
-
-    #Get all comments from the database, send as JSON. 
+    image = user.image
+ 
     commentData = [{'userName': user_name, 'userComment': comment, 'userImage': image}]
 
 

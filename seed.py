@@ -96,7 +96,7 @@ def load_users():
     for i, row in enumerate(open("seed_data/u.user")):
         row = row.rstrip()
         user_id,email,username,password,first_name,last_name,phone,language,language_level,image = row.split("|")
-        user = User(user_id=user_id, username=username, password=password,
+        user = User(user_id=user_id, email=email, username=username, password=password,
                     first_name=first_name, last_name=last_name, phone=phone,
                     language=language, language_level=language_level, image=image)
         db.session.add(user)

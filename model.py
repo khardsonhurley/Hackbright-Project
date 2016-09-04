@@ -107,7 +107,7 @@ class UserCategoryPreference(db.Model):
 
 
 class Phrase(db.Model):
-    """Stores phrases (1+ words) that the user looks up within the article."""
+    """Stores phrases (1+ words) that the user translates within the article."""
 
     __tablename__ = "phrases"
 
@@ -155,25 +155,26 @@ class Note(db.Model):
 ################################################################################
 #Model definitions (2.0 Features)
 
-# class Comments(db.Model):
-#     """Stores comments made by user in each channel"""
+class Comment(db.Model):
+    """Stores comments made by user in each channel"""
     
-#     __tablename__ = "comments"
+    __tablename__ = "comments"
 
-#     comment_id = db.Column(db.Integer,
-#                         autoincrement=True,
-#                         primary_key=True)
-#     user_id = db.Column(db.Integer,
-#                         db.ForeignKey('users.user_id'), nullable=False)
-#     article_id = db.Column(db.Integer,
-#                         db.ForeignKey('articles.article_id'), nullable=False)
-#     channel_id = db.Column(db.Integer,
-#                         db.ForeignKey('channels.channel_id'), nullable=False)
-#     phrase_id = db.Column(db.Integer,
-#                         db.ForeignKey('phrases.phrase_id'), nullable=False)
-#     comment = db.Column(db.Text, nullable=False)
 
-#     article = db.relationship("Article")
+    comment_id = db.Column(db.Integer,
+                        autoincrement=True, primary_key=True)
+
+    phrase_id = db.Column(db.PickleType, nullable=False)
+
+    user_id = db.Column(db.Integer,
+                        db.ForeignKey('users.user_id'), nullable=False)
+    article_id = db.Column(db.Integer,
+                        db.ForeignKey('articles.article_id'), nullable=False)
+    comment = db.Column(db.Text, nullable=False)
+
+    ##### Relationships #####
+    article = db.relationship("Article", backref='comments')
+    user = db.relationship('User', backref='comments')
 
 
 #####################################################################

@@ -2,7 +2,6 @@
 
 $(document).ready(function() {
 
-    $('.comment-window').hide();
     //global variable 
     var template = `<button class="btn btn-default translate-button">
             <span class='glyphicon glyphicon-transfer' aria-hidden='true'</span></button>` 
@@ -15,6 +14,10 @@ $(document).ready(function() {
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////    FUNCTIONS    ///////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
+
+    window.onload() = function() {
+        .post('/')
+    }
         
 //////////////////////////////    TRANSLATION    //////////////////////////////        
 
@@ -124,6 +127,9 @@ $(document).ready(function() {
             var anchorNode = selection.anchorNode;
             var startOfSelection = selection.getRangeAt(0).startOffset;
             var endOfSelection = selection.getRangeAt(0).endOffset;
+            var commentData = [];
+            commentData.push(startOfSelection);
+            commentData.push(endOfSelection);
 
             var jQAnchorNode = $(anchorNode).parent();
 
@@ -136,6 +142,7 @@ $(document).ready(function() {
             secondSpan.attr("class","commentedText")
             var innerSecondSpan = $("<a>")
             innerSecondSpan.attr("class", "commentLink");
+            innerSecondSpan.attr("id", commentData)
             innerSecondSpan.append(selection.toString());
             secondSpan.html(innerSecondSpan);
             var thirdSpan = $("<span>");
@@ -222,10 +229,7 @@ $(document).ready(function() {
             $('.panel-body').append(text + ': ' + translatedText+".");
         }
             
-            
 
-        
-        
 
 ///////////////////////////////////////////////////////////////////////////////
 /////////////////////////////    EVT LISTENERS    /////////////////////////////
@@ -268,9 +272,20 @@ $(document).ready(function() {
         $(document).on('mousedown', '.form-control', addCommentFormatting);
 
 
-        $(document).on('click', '.commentLink', function(){
-            getCommmentData();
-        })
+        $(document).on('click', '.commentLink', function(event){
+            var coordinatesString = event.target.id;
+            var coordinatesArray = coordinatesString.split(',')
+            var start = coordinatesArray[0];
+            var end = coordinatesArray[1];
+
+            var commentData = {
+                'start':start,
+                'end':end,
+            }
+
+            checkForComments(commentData);
+
+        });
 
         //Event listener that listens for user to his the 'X' button in the corner
         //of the comment window. 
@@ -278,6 +293,13 @@ $(document).ready(function() {
              $('.comment-sidebar').css('visibility', 'hidden');
              $('.commentTemplate').html("");
         });
+
+        window.onbeforeunload = closingCode;
+
+        function closingCode(){
+           $('.article-body')
+           return null;
+        }
 
         //PSEUDO-CODE: User enters a comment into the comment window and clicks
         //"add." This should make a ajax post request to the '/comment' route. 
