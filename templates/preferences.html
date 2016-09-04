@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h1>Hang in there, {{ user.first_name }}! You're almost done!</h1>
+
+    <form action="/preferences/{{user.user_id}}" method="POST">
+
+        <h2>Select your article topic preferences:</h2>
+        <div>
+        Preference #1: 
+        <select name="preference_1">
+            <option value="" disabled selected> Select your preference</option>
+            {% for category in categories %}
+                <option value= "{{category.category_code}}"> {{category.english_category}}</option>
+            {% endfor %}
+        </select>
+        </div>
+
+        <br>
+
+        <div>
+        Preference #2: 
+        <select name="preference_2">
+            <option value="" disabled selected> Select your preference</option>
+            {% for category in categories %}
+                <option value= "{{category.category_code}}"> {{category.english_category}}</option>
+            {% endfor %}
+        </select>
+        </div>
+
+        <br>
+
+        <div>
+        Preference #3: 
+        <select name="preference_3">
+            <option value="" disabled selected> Select your preference</option>
+            {% for category in categories %}
+                <option value= "{{category.category_code}}"> {{category.english_category}}</option>
+            {% endfor %}
+
+        </select>
+        </div>
+
+        <br>
+
+        <div>
+            <input type="submit" value="Save Preferences">
+        </div>
+
+    </form>
+{% endblock %}

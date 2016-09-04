@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h1>Login to Parrot</h1>
+    <form action="/login" method= "POST">
+
+        <div>
+            <label> Username:
+                <input type="username" name="username" value= "daisyd" required>
+            </label>
+        </div>
+
+        <div>
+            <label> Password:
+                <input type="password" name="password" value= "ilovedonald" required>
+            </label>
+        </div>
+
+        <div>
+            <input type="submit" value="Log In">
+        </div>
+
+        <br>
+        
+        <div>
+            <a href="/signup">Create an Account</a>
+        </div>
+
+    </form>
+{% endblock %}

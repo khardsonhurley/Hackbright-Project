@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h1>Sign Up for Parrot</h1>
+    <form action="/signup" method="POST">
+
+        <div>
+            <label> First name:
+                <input type="firstname" name="firstname" required>
+            </label>
+
+            <label> Last name:
+                <input type="lastname" name="lastname" required>
+            </label>
+        </div>
+        <br>
+        <br>
+        <div>
+            <label> Email:
+                <input type="email" name="email" required>
+            </label>
+        </div>
+        <br>
+        <br>
+        <div>
+            <label> Phone Number (SMS capable):
+                <input type="phone" name="phone">
+            </label>
+        </div>
+        <br>
+        <br>
+        <div>
+            <label> Username:
+                <input type="username" name="username" required>
+            </label>
+        </div>
+        <br>
+        <br>
+        <div>
+            <label> Password:
+                <input type="password" name="password" required>
+            </label>
+        </div>
+        <br>
+        <br>
+        <div>
+        <label>Spanish Language Proficiency:<label> 
+                <input type="radio" name="langlevel" value="novice">Novice
+                <input type="radio" name="langlevel" value="intermediate">Intermediate
+                <input type="radio" name="langlevel" value="advanced">Advanced
+
+        </div>
+        <br>
+        <br>
+        <div>
+            <input class= "btn btn-success btn-lg" type="submit" value="Sign Up">
+        </div>
+
+    </form>
+{% endblock %}

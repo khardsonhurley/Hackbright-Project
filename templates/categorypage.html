@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block page_specific_script_tag %}
+    <script src="/static/js/translatePopoverOnly.js"></script>
+{% endblock %}
+{% block content %}
+
+
+<div class="row">
+    {% for article in articles %}
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="thumbnail">
+                <img src="{{article.top_image}}">
+                <div class="caption">
+                    <h4>{{ article.title }}</h4>
+                    <a href="/article/{{article.article_id}}" 
+                    class="btn btn-primary center-block" role="button">Parrot</a>
+                </div>
+            </div>
+        </div>
+        <!-- This ends the div after hitting three articles and creates a new 
+        row for the next three articles. -->
+        {% if loop.index % 3 == 0 %}
+            </div>
+            <div class="row">
+        {% endif %}
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block page_specific_script_tag %}
+    <script src="/static/js/translatePopoverOnly.js"></script>
+{% endblock %}
+{% block content %}
+
+    <h1 >Lets translate!</h1>
+
+    <h4>Highlight a word below you want to translate. Then click the translate button.</h4>
+    <br> 
+    <div>
+        <div class='row' id='article-body'>
+            <div class='col-lg-12 col-md-12 col-sm-12 col-sm-12'>
+                <div><h4>La isla de los presidentes y el extraño dialecto de signos</h4>
+                Ha sido protagonista inesperada de una película, escena de accidentes y tragedias con apellido Kennedy, lugar de vacaciones, escenario de fiestas de recaudación para campañas políticas, destino de esclavos liberados hace dos siglos y la misteriosa cuna de un lenguaje de signos ancestral en Estados Unidos. Es la isla de Martha’s Vineyard, donde Barack Obama celebra junto a su familia sus últimas vacaciones de verano como presidente.
+                </div>
+                <br>
+                <div><b>Mansiones de lujo y campos de golf</b><br>
+
+                Obama ha elegido el mismo destino para sus vacaciones desde que es presidente, con una sola excepción, el año 2012, cuando se jugaba la reelección contra Mitt Romney. Este verano, la primera de los Obama en llegar a la isla ha sido Sasha, la hija mejor, que ha trabajado unas semanas en uno de los restaurantes locales. El resto de la familia, incluidos sus dos perros, se unieron este sábado después de celebrar el 55 cumpleaños del presidente y permanecerán allí hasta el día 21. La isla ha sido testigo del partido de golf número 300 que juega el presidente —el recuento lo lleva un periodista de CBS— acompañado de figuras de la NBA como Stephen Curry o Chris Paul.
+                </div>
+            </div>
+        </div>
+        <br>
+
+    </div>
+
+
+    <div>   
+            <h4> Like what you see? </h4>
+            <a href="/signup" class="btn btn-success btn-lg"> Sign Up </a>
+    </div>
+    
+
+
+{% endblock %}

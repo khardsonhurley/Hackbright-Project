@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="jumbotron">
+        <div class="container">
+        <h1>Parrot</h1>
+
+        <h3>An interactive spanish article translator for Spanish Language Learners</h3>
+            {% if "user_id" not in session %}
+                <a class="btn btn-success btn-lg" href="/signup">Get started</a>
+            {% endif %} 
+        <a href="/translate"><h4>Try it out!</h4></a>
+        </div>
+    </div>
+
+
+    <br> 
+
+    <div>
+            
+    </div>
+
+    <div>
+        <!-- Project Info -->
+    </div>
+
+    <div>
+        <!-- Project Features -->
+    </div>
+
+    <div>
+        <!-- Ratings -->
+    </div>
+
+    <div>
+        <!-- Contact Info -->
+    </div>
+{% endblock %}
