@@ -270,6 +270,25 @@ def translating():
 
         return translation
 
+@app.route('/checkspans', methods=['GET'])
+def check_spans():
+    article_id = session.get('article_id')
+
+    comments = Comment.query.filter(Comment.article_id==article_id).all()
+
+    comment_list = []
+
+    for comment in comments: 
+        phrase_id = comment.phrase_id
+        comment_dict={}
+        comment_dict['start'] = phrase_id[1]
+        comment_dict['end'] = phrase_id[2]
+        comment_list.append(comment_dict)
+
+    print comment_list
+        
+    return jsonify(result=comment_list)
+
 @app.route('/checkcomments', methods = ['POST'])
 def check_comments():
 

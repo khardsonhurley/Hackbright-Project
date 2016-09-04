@@ -1,5 +1,58 @@
 "use strict";
 
+    window.onload = function() {
+        checkSpans();
+    }
+
+    function checkSpans(){
+        $.get('/checkspans', function(result){
+            console.log(result.result[23]);
+            for (var i = 0; i<result.result.length; i++){
+                console.log('make span')
+                makeSpans(result.result[i]);
+                console.log('im back')
+            }
+            }); 
+    }
+      
+
+function makeSpans(coordinates){
+    console.log(coordinates)
+    var start = coordinates['start'];
+    var end = coordinates['end'];
+
+    var anchorNode = $('.my-node');
+
+    var commentData = [];
+    commentData.push(start);
+    commentData.push(end);
+
+    var beforeText = anchorNode.text().slice(0,start);
+    console.log(beforeText);
+    var selection = anchorNode.text().slice(start,end);
+    console.log(selection);
+    var afterText = anchorNode.text().slice(end);
+    console.log(afterText);
+
+    var firstSpan = $("<span>");
+    firstSpan.append(beforeText);
+    var secondSpan = $("<span>");
+    secondSpan.attr("class","commentedText")
+    var innerSecondSpan = $("<a>")
+    innerSecondSpan.attr("class", "commentLink");
+    innerSecondSpan.attr("id", commentData)
+    innerSecondSpan.append(selection);
+    secondSpan.html(innerSecondSpan);
+    var thirdSpan = $("<span>");
+    thirdSpan.append(afterText);
+
+    var kidList = [firstSpan, secondSpan, thirdSpan];
+
+    anchorNode.replaceWith(kidList);
+
+
+}
+
 $(document).ready(function() {
 
     //global variable 
@@ -14,10 +67,6 @@ $(document).ready(function() {
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////    FUNCTIONS    ///////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-
-    window.onload() = function() {
-        .post('/')
-    }
         
 //////////////////////////////    TRANSLATION    //////////////////////////////        
 
@@ -166,7 +215,7 @@ $(document).ready(function() {
             //This just moves the comment-window that already exists in the DOM
             //to the position on the same line as the selection. 
             $('#comment-window').offset({top:(position.top) + $(window).scrollTop()});
-            $('.commentReference').html('"'+ text+ '"');
+            $('.commentReference').replaceWith('"'+ text+ '"');
             $('.comment-sidebar').css('visibility', 'visible');
 
         }
@@ -235,7 +284,7 @@ $(document).ready(function() {
 /////////////////////////////    EVT LISTENERS    /////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
-        $('.article-body').mouseup(function(event){
+        $('#article-text').mouseup(function(event){
             firstPopover();
             event.stopPropagation(); 
         });
@@ -278,12 +327,16 @@ $(document).ready(function() {
             var start = coordinatesArray[0];
             var end = coordinatesArray[1];
 
+
+            // $('.commentReference').html(event.target.text);
+
             var commentData = {
                 'start':start,
                 'end':end,
             }
 
             checkForComments(commentData);
+            $('.commentReference').html(event.target.text, 5000);
 
         });
 
@@ -294,12 +347,6 @@ $(document).ready(function() {
              $('.commentTemplate').html("");
         });
 
-        window.onbeforeunload = closingCode;
-
-        function closingCode(){
-           $('.article-body')
-           return null;
-        }
 
         //PSEUDO-CODE: User enters a comment into the comment window and clicks
         //"add." This should make a ajax post request to the '/comment' route. 

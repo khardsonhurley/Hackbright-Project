@@ -126,5 +126,5 @@ if __name__ == "__main__":
     db.create_all()
     # add_categories()
     # load_articles()
-    # load_users()   
-    load_user_preferences()
+    load_users()   
+    # load_user_preferences()
