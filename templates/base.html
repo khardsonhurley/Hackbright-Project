@@ -64,16 +64,14 @@
 </nav>
 
 <div class="container">
-
 {% for flash in get_flashed_messages() %}
   <div class="alert alert-warning">{{ flash }}</div>
 {% endfor %}
-
+</div>
 {% block content %}
     Put your body here.
 {% endblock %}
 
-</div>
 
 </body>
 </html>

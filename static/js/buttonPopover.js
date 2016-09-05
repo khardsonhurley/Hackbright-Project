@@ -8,16 +8,16 @@
         $.get('/checkspans', function(result){
             console.log(result.result[23]);
             for (var i = 0; i<result.result.length; i++){
-                console.log('make span')
+                // console.log('make span')
                 makeSpans(result.result[i]);
-                console.log('im back')
+                // console.log('im back')
             }
             }); 
     }
       
 
 function makeSpans(coordinates){
-    console.log(coordinates)
+    // console.log(coordinates)
     var start = coordinates['start'];
     var end = coordinates['end'];
 
@@ -28,11 +28,11 @@ function makeSpans(coordinates){
     commentData.push(end);
 
     var beforeText = anchorNode.text().slice(0,start);
-    console.log(beforeText);
+    // console.log(beforeText);
     var selection = anchorNode.text().slice(start,end);
-    console.log(selection);
+    // console.log(selection);
     var afterText = anchorNode.text().slice(end);
-    console.log(afterText);
+    // console.log(afterText);
 
     var firstSpan = $("<span>");
     firstSpan.append(beforeText);
@@ -59,9 +59,9 @@ $(document).ready(function() {
     var template = `<button class="btn btn-default translate-button">
             <span class='glyphicon glyphicon-transfer' aria-hidden='true'</span></button>` 
             + " " + 
-            `<div class="btn btn-default comment-button">
+            `<button class="btn btn-default comment-button">
             <span class='glyphicon glyphicon-comment' aria-hidden='true'</span></div>`+ " "+
-            `<div class="btn btn-default twilio-button">
+            `<button class="btn btn-default twilio-button" data-toggle="modal" data-target="#myModal">
             <span class='glyphicon glyphicon-send' aria-hidden='true'</span></div>`;
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -71,6 +71,7 @@ $(document).ready(function() {
 //////////////////////////////    TRANSLATION    //////////////////////////////        
 
         function getText(){
+
             //on the window, this gets the translated text from the window. 
             var selection = window.getSelection();  
 
@@ -149,7 +150,7 @@ $(document).ready(function() {
 
 //////////////////////////////    COMMENT WINDOW    //////////////////////////////
 
-        function getCommmentData(){
+        function getCommmentData(evt){
             var selection = window.getSelection();
             var anchorNode = selection.anchorNode;
             var startOfSelection = selection.getRangeAt(0).startOffset;
@@ -158,15 +159,19 @@ $(document).ready(function() {
             var commentData = {
                 'start':startOfSelection,
                 'end':endOfSelection,
+                'selectionObj': selection
             }
-
             checkForComments(commentData);
         }
 
         function checkForComments(commentData){
-            $.post('/checkcomments', commentData, function(result){
+            var commentData;
+            var postParams = {'start':commentData.start,
+                                'end': commentData.end
+                            };
+            $.post('/checkcomments', postParams, function(result){
                 displayComments(result);
-                showCommentWindow();
+                showCommentWindow(commentData.selectionObj);
             });
         }
 
@@ -202,21 +207,29 @@ $(document).ready(function() {
             jQAnchorNode.replaceWith(kidList);
         }
 
-        function showCommentWindow(){
+        function showCommentWindow(selection){
+
+
             //Get the User's selection
-            var textSelection = getText();
-            //get the selection object
-            var selection = textSelection['selection'];
+            // var textSelection = getText();
+            // //get the selection object
+            // var selection = textSelection['selection'];
+
+            console.log(selection);
             //find the position using the selection object
             var position = selection.getRangeAt(0).getBoundingClientRect();
             
-            var text = textSelection['text'];
+            // var text = textSelection['text'];
             
             //This just moves the comment-window that already exists in the DOM
             //to the position on the same line as the selection. 
-            $('#comment-window').offset({top:(position.top) + $(window).scrollTop()});
-            $('.commentReference').replaceWith('"'+ text+ '"');
+
+            $('.detailBox').offset({top:(position.top) + $(window).scrollTop()});
+
             $('.comment-sidebar').css('visibility', 'visible');
+
+            console.log(position);
+            console.log($('#comment-window'));
 
         }
 
@@ -296,7 +309,6 @@ $(document).ready(function() {
                 }
                 console.log(twilioMessage);
                 $.post('/twilio', twilioMessage, function(result){
-                    alert(result);
                     $('.popover').remove();
                 });
             });
@@ -333,9 +345,9 @@ $(document).ready(function() {
             }
         });
 
-        $(document).on('click', '.comment-button', function(){
+        $(document).on('click', '.comment-button', function(evt){
             $('.popover').remove();
-            getCommmentData();
+            getCommmentData(evt);
 
         });
 
@@ -354,11 +366,16 @@ $(document).ready(function() {
 
 
             // $('.commentReference').html(event.target.text);
+            var textSelection = getText();
+            //get the selection object
+            var selection = textSelection['selection'];
+
 
             var commentData = {
                 'start':start,
                 'end':end,
-            }
+                'selectionObj': selection
+            };
 
             checkForComments(commentData);
             $('.commentReference').html(event.target.text, 5000);
@@ -376,15 +393,9 @@ $(document).ready(function() {
             sendTwilioMessage();
         });
 
-        //PSEUDO-CODE: User enters a comment into the comment window and clicks
-        //"add." This should make a ajax post request to the '/comment' route. 
-        //Adding the comment to the DB and now displaying it as one of the comments.
-
-        //PSEUDO-CODE: Another event listener for when the user clicks off the 
-        //comment window. Comment window collapses into a icon that is located
-        //at the same top position as the selection. Also would like to make 
-        //the selection highlighted a light grey so other users can see that it 
-        //has a comment on it. 
+        $(document).on('click', '.popover', function(evt){
+            $('.popover').remove();
+        });
 
 });
 

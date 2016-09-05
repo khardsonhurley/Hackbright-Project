@@ -3,6 +3,7 @@
 .navbar {
     background-color: #ffffff;
     border-color: #ffffff;
+    margin-bottom: 0px;
 }
 
 .alert-warning {
@@ -16,19 +17,39 @@
 }
 
 .navbar-brand {
-    padding: 10px 10px;
+    padding: 5px 10px;
 }
 
+div .commentBox{
+    background-color: #fbfbfb;
+}
+div #article-text {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+div .actionBox {
+    background-color: #fbfbfb;
+}
 body {
-    background-color: #ffffff;
+    background-color: #fbfbfb;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
 }
 
 div .detailBox {
     width:300px;
-    border:1px solid #bbb;
-    margin:50px;
+    border:1px solid rgba(0,0,0,.15);
+    border-radius:5px;
+    box-shadow: 0 0 4px #f3f3f3;
+    /*margin-left: 50px;*/
+/*    display: block;
+    margin-left: auto;
+    margin-right: auto;*/
+}
+
+.u-backgroundWhite {
+    background: #f3f3f3!important;
 }
 .titleBox {
     background-color:#fdfdfd;
@@ -56,6 +77,12 @@ div .detailBox {
 .taskDescription {
     margin-top:10px 0;
 }
+#article-image{
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
 .commentList {
     padding:0;
     list-style:none;
@@ -97,5 +124,9 @@ div .detailBox {
 
 .commentLink {
   color: inherit; /* blue colors for links too */
+  cursor:pointer;
   text-decoration: inherit; /* no underline */
+}
+.popover{
+    cursor: no-drop;
 }

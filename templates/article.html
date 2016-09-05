@@ -3,92 +3,101 @@
     <script src="/static/js/buttonPopover.js"></script>
 {% endblock %}
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-            <div class="row">
+<style>
+    body{
+        /*background-color: #f1a977;*/
+    }
+    .article-row{
+        background-color: #fff;
+    }
+
+</style>
+<div class="container-fluid">
+    <div class="row" >
+        <div class="col-md-8 col-sm-12 col-xs-12">
                 <div class="row">
-                    <h1 class="article-body">{{ article.title }}<h1>
-                    <img src="{{article.top_image}}">
-                    <h4 class="article-body">Por: 
-                        {% for author in article.authors %}
-                            {{author}},
-                        {% endfor %}
-                    </h4>
-                    <a href="{{article.url}}">click here for article</a>
+                    <div class="col-xs-12 article-row" >
+                        <h1 class="article-body">{{ article.title }}<h1>
+                        <img src="{{article.top_image}}" id="article-image">
+                        <h4 class="article-body">Escrito Por: 
+                            {% for author in article.authors %}
+                                {% if article.authors|length>1 %}
+                                {{author}}|
+                                {% else %}
+                                {{author}}
+                                {% endif %}
+
+                            {% endfor %}
+                        </h4>
+                        <a href="{{article.url}}">click here for article</a>
+                    </div>
                 </div>
                 <div class="row">
-                    <div class="article-body" id="article-text"><span class="my-node">{{article.text}}</span></div>
+                    <div class="col-xs-12 article-row">
+                        <div class="article-body" id="article-text"><span class="my-node">{{article.text}}</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
         </div>
 
-        <div class="col-lg-3 col-sm-12 col-md-12">
+        <div class="col-lg-3 col-sm-12 col-md-12" id="test-sidebar">
                 <label for="comments">Comment Sidebar:</label>
                 <br>
                 <div class="comment-sidebar" id = "sidebar-column" cols= "30" rows="20" style="visibility:hidden">
-                    <div class="detailBox" id="comment-window">
-                        <div class="titleBox">
-                            <button class="btn btn-default" id="translate-button">
-                                <span class='glyphicon glyphicon-comment' 
-                                data-toggle='collapse' data-target='#commentary'
-                                aria-hidden='true'</span>
-                            </button> 
-                            <label>Comentarios</label>
-                            <button type="button" class="close">&times;</button>
-                        </div>
-                        <div class='collapse in' id='commentary'>
-                            <div class="commentBox">
-                                <b>¡Escribe un comentario!</b>
+                    <div class="detailBox-wrapper">
+                        <div class="detailBox u-backgroundWhite" id="comment-window">
+                            <div class="titleBox">
+                                <button class="btn btn-default" id="translate-button">
+                                    <span class='glyphicon glyphicon-comment' 
+                                    data-toggle='collapse' data-target='#commentary'
+                                    aria-hidden='true'</span>
+                                </button> 
+                                <label>Comentarios</label>
+                                <button type="button" class="close">&times;</button>
                             </div>
-                            <div class="actionBox">
-                                <ul class="commentList">
-<!--                                     <li class="">
-                                        <div class="commenterImage">
-                                          <img class= "userImage"/>
+                            <div class='collapse in' id='commentary'>
+                                <div class="commentBox">
+                                    <b>¡Escribe un comentario!</b>
+                                </div>
+                                <div class="actionBox">
+                                    <ul class="commentList">
+                                        <div class='commentTemplate'></div>
+                                    </ul>
+                                    <form class="form-inline" role="form">
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" placeholder="Your comments" id="user-comment"/>
                                         </div>
-                                        <div class="commentText">
-                                            <h6 class='userName'></h6>
-                                            <p class="commentBody"></p>
-                                                 <span class="date sub-text">
-                                                 </span>
-
+                                        <div class="form-group">
+                                            <button class="btn btn-default" id="add-comment-button">Add</button>
                                         </div>
-                                    </li> -->
-                                    <div class='commentTemplate'></div>
-                               <!--      <li>
-                                        <div class="commenterImage">
-                                          <img src="http://placekitten.com/45/45" />
-                                        </div>
-                                        <div class="commentText">
-                                            <p class="">Hello this is a test comment and this comment is also from another user. It is particularly very long and it goes on and on and on.</p> <span class="date sub-text">on March 5th, 2014</span>
-
-                                        </div>
-                                    </li> -->
-                                </ul>
-                                <form class="form-inline" role="form">
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" placeholder="Your comments" id="user-comment"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <button class="btn btn-default" id="add-comment-button">Add</button>
-                                    </div>
-                                </form>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
-                <br>
-<!--                 <a href="#"><button type="button" class="btn btn-success center-block">Save Notes</button></a>
-                <br>
-                <div class="panel panel-success">
-                    <div class="panel-heading">Vocab List</div>
-                    <div class="panel-body"></div>
-                </div> -->
-        </div>  
-
+            </div>  
     </div>
+</div>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Message Sent!</h4>
+      </div>
+      <div class="modal-body">
+        <p>Parrot has sent your phrase and it's translation to your mobile device!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 {% endblock %}

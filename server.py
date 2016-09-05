@@ -193,6 +193,10 @@ def article(article_id):
     #Parse through the article. 
     articleobj.parse()
 
+    # from newspaper import fulltext
+
+    # articleobj.
+
     #Remove an article_id that is in the session and replace it with new 
     #article_id, note that if you return to the same article, its okay becuase
     #article_id will keep it honest since it never changes. 
