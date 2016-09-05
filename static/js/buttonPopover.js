@@ -278,6 +278,31 @@ $(document).ready(function() {
             $('.panel-body').append(text + ': ' + translatedText+".");
         }
             
+//////////////////////////////    TWILIO BUTTON    //////////////////////////////
+
+        function sendTwilioMessage(){
+            var selection = getText();
+
+            var text = selection['text'];
+
+            var translationInput = {
+                "phrase": text
+            }
+
+            $.post("/translate", translationInput, function(result){
+                var twilioMessage = {
+                    "phrase": text,
+                    "translation": result
+                }
+                console.log(twilioMessage);
+                $.post('/twilio', twilioMessage, function(result){
+                    alert(result);
+                    $('.popover').remove();
+                });
+            });
+
+            
+        }
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -347,6 +372,9 @@ $(document).ready(function() {
              $('.commentTemplate').html("");
         });
 
+        $(document).on('click', '.twilio-button', function(){
+            sendTwilioMessage();
+        });
 
         //PSEUDO-CODE: User enters a comment into the comment window and clicks
         //"add." This should make a ajax post request to the '/comment' route. 

@@ -27,6 +27,8 @@ from random import sample
 
 import urllib
 
+from send_sms import send_text
+
 app = Flask(__name__)
 
 # Required to use Flask sessions and the debug toolbar
@@ -352,6 +354,25 @@ def test_comments():
 
     print "\n\n\n\n\n\n %s \n\n\n\n\n\n" % commentData
     return jsonify(commentData=commentData)
+
+@app.route('/twilio', methods=['POST'])
+def twilio():
+    """send API request to Twilio API"""
+
+    phrase = request.form.get("phrase")
+
+    translation = request.form.get("translation")
+
+    text = {'phrase':phrase, 'translation': translation}
+
+    send_text(text)
+
+    print text
+
+    success_message = "A message has been sent!"
+
+    return success_message
+
 
 @app.route('/logout')
 def logout_user():
