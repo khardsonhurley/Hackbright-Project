@@ -1,38 +1,56 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
+{% block page_specific_script_tag %}
+  <link href="/static/css/cover.css" rel="stylesheet">
+{% endblock %}
 {% block content %}
 
-    <div class="jumbotron">
-        <div class="container">
-        <h1>Parrot</h1>
+    <style>
+        html,
+        body{
+            position: relative;
+            background: #000 url("/static/img/Home.JPG") center center;
+            width: 100%;
+            height: 100%;
 
-        <h3>An interactive spanish article translator for Spanish Language Learners</h3>
+            background-size: cover;
+            overflow: hidden;
+            -webkit-background-size: cover; /* safari */
+            -moz-background-size: cover; /* firefox */
+            -o-background-size: cover; /* Opera */
+            /* Ensure the html element always takes up the full height of the browser window */
+            min-height: 100%;
+            background-color: #fff;
+            color: #fff;
+            text-align: center;
+        }
+
+    </style>
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+            <img src="/static/img/ParrotLogo.png" height="400px" width=auto>
+            <p class="lead">An interactive spanish article translator for Spanish Language Learners</p>
             {% if "user_id" not in session %}
-                <a class="btn btn-success btn-lg" href="/signup">Get started</a>
+                <a class="btn btn-default btn-lg" href="/signup">Get started</a>
             {% endif %} 
-        <a href="/translate"><h4>Try it out!</h4></a>
+            <a href="/translate"><h4>Try it out!</h4></a>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Designed and developed by <a href="https://github.com/khardsonhurley">Krishelle Hardson-Hurley</a>. Built at <a href="https://hackbrightacademy.com/">Hackbright Academy</a>.</p>
+              <p>2016 Parrot. All Rights Reserved.</p>
+            </div>
+          </div>
+
         </div>
+
+      </div>
+
     </div>
 
 
-    <br> 
 
-    <div>
-            
-    </div>
-
-    <div>
-        <!-- Project Info -->
-    </div>
-
-    <div>
-        <!-- Project Features -->
-    </div>
-
-    <div>
-        <!-- Ratings -->
-    </div>
-
-    <div>
-        <!-- Contact Info -->
-    </div>
 {% endblock %}

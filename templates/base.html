@@ -3,12 +3,12 @@
 <head>
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- jQuery -->
-    <!--<script src="http://code.jquery.com/jquery.js"></script>-->
     <!-- Bootstrap cdn -->
     <link rel="stylesheet"
           href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.css"/>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="icon" href="/static/img/ParrotLogo.png">
     <!-- My JS code specific to the page in question -->
 
     {% block page_specific_script_tag %}{% endblock %}
@@ -33,13 +33,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-          <a href="/" class="navbar-brand">Parrot</a>
+          <a href="/" class="navbar-brand"><img src="/static/img/PLogo.png" height="40px" width="auto"></a>
     </div>
     <ul class="nav navbar-nav navbar-right">
         {% if "user_id" in session %}
-            <a href="/logout"><button type="button" class="btn btn-success navbar-btn">Logout</button></a>
+            <a href="/logout"><button type="button" class="btn btn-default navbar-btn">Logout</button></a>
         {% else %}
-            <a href="/login"><button type="button" class="btn btn-success navbar-btn">Login</button></a>
+            <a href="/login"><button type="button" class="btn btn-default navbar-btn">Login</button></a>
         {% endif %}
     </ul>
     <ul class="nav navbar-nav navbar-right">
@@ -66,7 +66,7 @@
 <div class="container">
 
 {% for flash in get_flashed_messages() %}
-  <div class="alert alert-success">{{ flash }}</div>
+  <div class="alert alert-warning">{{ flash }}</div>
 {% endfor %}
 
 {% block content %}

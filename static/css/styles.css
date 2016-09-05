@@ -1,7 +1,14 @@
 /* Your styles can go here. */
 
 .navbar {
-    background-color: #ecffb3;
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+.alert-warning {
+    color: #9B9C9B;
+    background-color: #ffffff;
+    border-color: #9B9C9B;
 }
 
 .fake {
@@ -13,7 +20,7 @@
 }
 
 body {
-    background-color: #fbfbfb;
+    background-color: #ffffff;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
 }

@@ -9,6 +9,7 @@
             <div class="row">
                 <div class="row">
                     <h1 class="article-body">{{ article.title }}<h1>
+                    <img src="{{article.top_image}}">
                     <h4 class="article-body">Por: 
                         {% for author in article.authors %}
                             {{author}},
