@@ -1,30 +1,39 @@
 {% extends 'base.html' %}
 {% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-4 panel panel-default panel-shadow">
+                <div class="panel-body">
+                <h1>Login to Parrot</h1>
+                <form action="/login" method= "POST">
 
-    <h1>Login to Parrot</h1>
-    <form action="/login" method= "POST">
+                    <div>
+                        <label> Username:
+                            <input type="username" name="username" value= "daisyd" required>
+                        </label>
+                    </div>
 
-        <div>
-            <label> Username:
-                <input type="username" name="username" value= "daisyd" required>
-            </label>
+                    <div>
+                        <label> Password:
+                            <input type="password" name="password" value= "ilovedonald" required>
+                        </label>
+                    </div>
+
+                    <div>
+                        <input type="submit" class="btn btn-default" value="Log In">
+                    </div>
+
+                    <br>
+                    
+                    <div>
+                        <a href="/signup">Create an Account</a>
+                    </div>
+                </form>
+                </div>
+            </div>
+
         </div>
+    </div>
 
-        <div>
-            <label> Password:
-                <input type="password" name="password" value= "ilovedonald" required>
-            </label>
-        </div>
-
-        <div>
-            <input type="submit" class="btn btn-default" value="Log In">
-        </div>
-
-        <br>
-        
-        <div>
-            <a href="/signup">Create an Account</a>
-        </div>
-
-    </form>
+    
 {% endblock %}

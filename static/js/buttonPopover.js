@@ -60,9 +60,9 @@ $(document).ready(function() {
             <span class='glyphicon glyphicon-transfer' aria-hidden='true'</span></button>` 
             + " " + 
             `<button class="btn btn-default comment-button">
-            <span class='glyphicon glyphicon-comment' aria-hidden='true'</span></div>`+ " "+
+            <span class='glyphicon glyphicon-comment' aria-hidden='true'</span></button>`+ " "+
             `<button class="btn btn-default twilio-button" data-toggle="modal" data-target="#myModal">
-            <span class='glyphicon glyphicon-send' aria-hidden='true'</span></div>`;
+            <span class='glyphicon glyphicon-send' aria-hidden='true'</span></button>`;
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////    FUNCTIONS    ///////////////////////////////
@@ -89,6 +89,7 @@ $(document).ready(function() {
             var translationInput = {
                 "phrase": text
             }
+            console.log(translationInput);
             //send a post request to the translate route, remember the middle 
             //value is the data you are sending to the route. This must be in 
             //dictionary format for request.form.get(). The result of that
@@ -96,6 +97,7 @@ $(document).ready(function() {
             // pass in two things: translated result and the location of it.)
             $.post("/translate", translationInput, function(result){
                 showTranslation(result);
+                console.log(result)
                 addToVocabList(translationInput["phrase"], result);
             });
         }
@@ -113,6 +115,8 @@ $(document).ready(function() {
 
             //sets the tooltip data. 
             thePopover.data({'content': content , 'toggle':'popover', 'placement': 'top', 'html': true});
+
+            thePopover.attr('id','popover-body');
 
             //add the span to the html. 
             $('body').append(thePopover);
@@ -144,6 +148,7 @@ $(document).ready(function() {
             var htmlTranslation = '<p>'+translation+'</p>';
             //Changes the html to display the translation. Also moves the popover
             //over slightly. Why is this? 
+            // debugger;
             $('.popover-content').html(htmlTranslation);
 
         }
@@ -215,7 +220,6 @@ $(document).ready(function() {
             // //get the selection object
             // var selection = textSelection['selection'];
 
-            console.log(selection);
             //find the position using the selection object
             var position = selection.getRangeAt(0).getBoundingClientRect();
             
@@ -269,7 +273,7 @@ $(document).ready(function() {
         function formatComment(imageUrl, userName, comment){
 
                 var htmlComment= `<li class="">
-                    <div class="commenterImage">
+                    <div class="commenterImage img-circle">
                     <img class= "userImage" src=` + imageUrl +
                     `/>
                     </div>
@@ -327,7 +331,8 @@ $(document).ready(function() {
         });
 
 
-        $(document).on('click', '.translate-button', function(){
+        $(document).on('click', '.translate-button', function(evt){
+            evt.stopPropagation();
             var textSelection = getText();
             var text= textSelection['text'];
             // This function calls the showTranslation function. 
@@ -365,7 +370,6 @@ $(document).ready(function() {
             var end = coordinatesArray[1];
 
 
-            // $('.commentReference').html(event.target.text);
             var textSelection = getText();
             //get the selection object
             var selection = textSelection['selection'];
@@ -394,8 +398,12 @@ $(document).ready(function() {
         });
 
         $(document).on('click', '.popover', function(evt){
+            // if $('.translate-button').clicked == True:
+            //     return
+            // else:
             $('.popover').remove();
         });
+
 
 });
 

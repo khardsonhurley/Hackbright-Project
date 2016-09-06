@@ -3,33 +3,28 @@
     <script src="/static/js/buttonPopover.js"></script>
 {% endblock %}
 {% block content %}
-<style>
-    body{
-        /*background-color: #f1a977;*/
-    }
-    .article-row{
-        background-color: #fff;
-    }
-
-</style>
-<div class="container-fluid">
-    <div class="row" >
+<div class="container article-card">
+    <div class="row inner-article-card" >
         <div class="col-md-8 col-sm-12 col-xs-12">
                 <div class="row">
                     <div class="col-xs-12 article-row" >
-                        <h1 class="article-body">{{ article.title }}<h1>
-                        <img src="{{article.top_image}}" id="article-image">
-                        <h4 class="article-body">Escrito Por: 
+                        <h1 class="article-body" id="article-title">{{ article.title }}<h1>
+                        <h4 class="article-body" id="article-authors">Escrito Por: 
                             {% for author in article.authors %}
                                 {% if article.authors|length>1 %}
-                                {{author}}|
+                                {{author}},
                                 {% else %}
                                 {{author}}
+                                {% endif %}
+                                {% if loop.index % 1 == 0 %}
+                                y {{author}}.   
                                 {% endif %}
 
                             {% endfor %}
                         </h4>
-                        <a href="{{article.url}}">click here for article</a>
+                        <img src="{{article.top_image}}" id="article-image">
+                        <a href="{{article.url}}"><button type="button" class="btn btn-default navbar-btn">Go to Article</button></a>
+                        
                     </div>
                 </div>
                 <div class="row">
@@ -41,11 +36,9 @@
         </div>
 
         <div class="col-lg-3 col-sm-12 col-md-12" id="test-sidebar">
-                <label for="comments">Comment Sidebar:</label>
                 <br>
                 <div class="comment-sidebar" id = "sidebar-column" cols= "30" rows="20" style="visibility:hidden">
-                    <div class="detailBox-wrapper">
-                        <div class="detailBox u-backgroundWhite" id="comment-window">
+                        <div class="detailBox" id="comment-window">
                             <div class="titleBox">
                                 <button class="btn btn-default" id="translate-button">
                                     <span class='glyphicon glyphicon-comment' 
@@ -56,25 +49,24 @@
                                 <button type="button" class="close">&times;</button>
                             </div>
                             <div class='collapse in' id='commentary'>
-                                <div class="commentBox">
+                                <div class="commentBox u-backgroundWhite">
                                     <b>¡Escribe un comentario!</b>
                                 </div>
-                                <div class="actionBox">
-                                    <ul class="commentList">
+                                <div class="actionBox u-backgroundWhite">
+                                    <ul class="commentList u-backgroundWhite">
                                         <div class='commentTemplate'></div>
                                     </ul>
-                                    <form class="form-inline" role="form">
+                                    <form class="form-inline u-backgroundWhite" role="form">
                                         <div class="form-group">
-                                            <input class="form-control" type="text" placeholder="Your comments" id="user-comment"/>
+                                            <input class="form-control u-backgroundWhite" type="text" placeholder="Your comments" id="user-comment"/>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group u-backgroundWhite">
                                             <button class="btn btn-default" id="add-comment-button">Add</button>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>  
     </div>
@@ -90,7 +82,7 @@
         <h4 class="modal-title">Message Sent!</h4>
       </div>
       <div class="modal-body">
-        <p>Parrot has sent your phrase and it's translation to your mobile device!</p>
+        <p>Parrot has sent your phrase and it's translation to your mobile device! Learning new vocabulary is exciting and a sign of progress! Now that you have your phrase on your device, check back from time to time to help solify your learning!</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -1,9 +1,13 @@
-/* Your styles can go here. */
+/*FONT FAMILIES*/
+/*    font-family: 'Lato', sans-serif;
+    font-family: 'Droid Serif', serif;*/
+
 
 .navbar {
     background-color: #ffffff;
     border-color: #ffffff;
     margin-bottom: 0px;
+    box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 }
 
 .alert-warning {
@@ -20,39 +24,69 @@
     padding: 5px 10px;
 }
 
-div .commentBox{
-    background-color: #fbfbfb;
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #f1a977;
+    background-color: transparent;
+}
+
+div .u-backgroundWhite{
+    background-color: #fff;
 }
 div #article-text {
     text-align: justify;
     text-justify: inter-word;
+    padding:30px;
+    line-height: 1.7 !important;
 }
 
-div .actionBox {
-    background-color: #fbfbfb;
+html{
+    overflow:hidden;
+    height:100%;
+}
+
+.btn-default:hover {
+    color: #fff;
+    background-color: #f1a977;
+    border-color: 1px solid rgba(0,0,0,.09); /*set the color you want here*/
+}
+
+.panel-shadow {
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,.1);
+    border: 1px solid rgba(0,0,0,.09);
+}
+.article-card {
+    padding: 25px;
+}
+.inner-article-card{
+    background: #fbfbfb;
+    box-shadow: 0 1px 4px rgba(0,0,0,.1);
+    border: 1px solid rgba(0,0,0,.09);
+}
+.panel-body {
+    padding-left: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 body {
-    background-color: #fbfbfb;
-    font-family: 'Open Sans', sans-serif;
+    background-color: #f3f3f3;
     font-size: 16px;
+    height:100%;
+    overflow: auto;
+    padding-top: 70px;
 }
 
-div .detailBox {
+.detailBox {
     width:300px;
-    border:1px solid rgba(0,0,0,.15);
-    border-radius:5px;
-    box-shadow: 0 0 4px #f3f3f3;
-    /*margin-left: 50px;*/
-/*    display: block;
-    margin-left: auto;
-    margin-right: auto;*/
+    border-radius:5px; 
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.1);
+    border: 1px solid rgba(0,0,0,.09);
+    margin-left: 20px;
 }
 
-.u-backgroundWhite {
-    background: #f3f3f3!important;
-}
 .titleBox {
-    background-color:#fdfdfd;
+    color: rgba(0,0,0,.44);
     padding:10px;
 }
 .titleBox label{
@@ -60,10 +94,13 @@ div .detailBox {
   margin:0;
   display:inline-block;
 }
-
+.actionBox {
+    border-top:1px solid rgba(0,0,0,.15);
+    padding:10px; 
+}
 .commentBox {
     padding:10px;
-    border-top:1px dotted #bbb;
+    border-top:1px solid rgba(0,0,0,.15);
 }
 .commentBox .form-group:first-child, .actionBox .form-group:first-child {
     width:80%;
@@ -77,10 +114,45 @@ div .detailBox {
 .taskDescription {
     margin-top:10px 0;
 }
+#article-title{
+    font-size: 40px;
+    line-height: 1em;
+    font-style: normal;
+    font-weight: 700;
+    text-align: left;
+    color:#202020;
+    font-family: "Lato";
+
+    letter-spacing: -.028em;
+    margin-bottom: 0px;
+}
+#article-authors{
+    font-family: 'Lato', serif;
+    font-style:normal;
+    font-weight: 300;
+    font-size: 20px;
+    color: #414141;
+    line-height: 1em;
+    letter-spacing: -.022em;
+    color:#bbb;
+    top-margin:4px;
+}
 #article-image{
     display: block;
     text-align: center;
     margin: auto;
+    width: 100%;
+    padding: 66,75%; 
+    /*padding-left: */
+}
+
+#article-text{
+    font-family: 'Droid Serif';
+    font-size: 20px;
+    line-height: 1.04
+}
+.article-row{
+    background-color: #fff;
 }
 
 .commentList {
@@ -97,14 +169,20 @@ div .detailBox {
     display:table-cell;
 }
 .commenterImage {
-    width:30px;
+    width:40px;
     margin-right:5px;
-    height:100%;
+    /*height:120%;*/
     float:left;
+    padding:3px;
+    overflow:hidden;
+
 }
 .commenterImage img {
     width:100%;
-    border-radius:50%;
+}
+
+.img-circle {
+    border: 1px solid rgba(0,0,0,.15);
 }
 .commentText p {
     margin:0;
@@ -114,9 +192,9 @@ div .detailBox {
     font-family:verdana;
     font-size:11px;
 }
-.actionBox {
-    border-top:1px dotted #bbb;
-    padding:10px;
+.userName {
+    color: #f1a977;
+
 }
 .commentedText{
     background-color: #DCDCDC;

@@ -8,13 +8,14 @@
           href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.css"/>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <link rel="icon" href="/static/img/ParrotLogo.png">
+    <link rel="shortcut icon" href="/static/img/PIcon.png" style="width:100%">
     <!-- My JS code specific to the page in question -->
 
     {% block page_specific_script_tag %}{% endblock %}
 
     <!-- Google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Lato:400,900" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> -->
     <!-- My CSS file -->
     <link rel="stylesheet" href="/static/css/styles.css">
     <!-- To Costomize title of page with user's name -->
@@ -23,7 +24,7 @@
 <body>
 
 <!-- Navigation Bar -->
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -33,7 +34,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-          <a href="/" class="navbar-brand"><img src="/static/img/PLogo.png" height="40px" width="auto"></a>
+          <a href="/" class="navbar-brand"><img id="corner-logo" src="/static/img/PLogo.png" height="40px" width="auto"></a>
     </div>
     <ul class="nav navbar-nav navbar-right">
         {% if "user_id" in session %}
@@ -63,11 +64,11 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<div class="container">
-{% for flash in get_flashed_messages() %}
-  <div class="alert alert-warning">{{ flash }}</div>
-{% endfor %}
-</div>
+<!-- <div class="container site-wrap-inner">
+  {% for flash in get_flashed_messages() %}
+    <div class="alert alert-warning">{{ flash }}</div>
+  {% endfor %}
+</div> -->
 {% block content %}
     Put your body here.
 {% endblock %}
