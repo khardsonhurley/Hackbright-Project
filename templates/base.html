@@ -40,7 +40,10 @@
         {% if "user_id" in session %}
             <a href="/logout"><button type="button" class="btn btn-default navbar-btn">Logout</button></a>
         {% else %}
-            <a href="/login"><button type="button" class="btn btn-default navbar-btn">Login</button></a>
+            <div class="row" id="login-app">
+            <a href="/login"><button type="button" class="btn btn-default navbar-btn pull-right">Login</button></a>
+            </div>
+            {% block signuplink %}{% endblock %}
         {% endif %}
     </ul>
     <ul class="nav navbar-nav navbar-right">

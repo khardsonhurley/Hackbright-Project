@@ -59,7 +59,12 @@ a:focus{
 /*
  * Base structure
  */
-
+#login-app{
+    margin-right: 0px;
+}
+.navbar-right{
+  margin-top: 15px;
+}
 html,
 body {
   height: 100%;

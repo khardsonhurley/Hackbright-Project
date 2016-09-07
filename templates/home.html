@@ -2,13 +2,17 @@
 {% block page_specific_script_tag %}
   <link href="/static/css/cover.css" rel="stylesheet">
 {% endblock %}
+{% block signuplink %}
+<a class="signup-link" href="#">Don't have an account? Sign up here</a>
+<!-- <a class="signup-link" href="/signup">Don't have an account? Sign up here</a> -->
+{% endblock %}
 {% block content %}
 
     <style>
         html,
         body{
             position: relative;
-            background: #000 url("/static/img/Home.JPG") center center;
+            background: #000 url("/static/img/Newspaper.jpg") center center;
             width: 100%;
             height: 100%;
 
@@ -37,7 +41,8 @@
                             <div class="col-sm-4">
                                 <p class="subheading">Learning a second language can be challenging. Simplify it with Parrot, the app that talks back.</p>
                                 {% if "user_id" not in session %}
-                                    <a class="btn btn-info btn-lg" id="start-button" href="/signup">Get started</a>
+                                    <a href="#"><button class="btn btn-info btn-lg" id="start-button">Get started</button><a>
+                                    <!-- <a href="/signup"><button class="btn btn-info btn-lg" id="start-button">Get started</button><a> -->
                                 {% endif %} 
                             </div>
 
