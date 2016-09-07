@@ -12,18 +12,12 @@
                         <h4 class="article-body" id="article-authors">Escrito Por: 
                             {% for author in article.authors %}
                                 {% if article.authors|length>1 %}
-                                {{author}},
-                                {% else %}
-                                {{author}}
+                                {{author}} | 
                                 {% endif %}
-                                {% if loop.index % 1 == 0 %}
-                                y {{author}}.   
-                                {% endif %}
-
                             {% endfor %}
                         </h4>
                         <img src="{{article.top_image}}" id="article-image">
-                        <a href="{{article.url}}"><button type="button" class="btn btn-default navbar-btn">Go to Article</button></a>
+                        <a href="{{article.url}}"><button type="button" id="article-link-btn" class="btn btn-default navbar-btn">Go to Article</button></a>
                         
                     </div>
                 </div>
@@ -35,7 +29,7 @@
                 </div>
         </div>
 
-        <div class="col-lg-3 col-sm-12 col-md-12" id="test-sidebar">
+        <div class="col-lg-3 col-sm-12" id="test-sidebar">
                 <br>
                 <div class="comment-sidebar" id = "sidebar-column" cols= "30" rows="20" style="visibility:hidden">
                         <div class="detailBox" id="comment-window">
@@ -82,7 +76,9 @@
         <h4 class="modal-title">Message Sent!</h4>
       </div>
       <div class="modal-body">
-        <p>Parrot has sent your phrase and it's translation to your mobile device! Learning new vocabulary is exciting and a sign of progress! Now that you have your phrase on your device, check back from time to time to help solify your learning!</p>
+        <p>Parrot has sent your phrase and it's translation to your mobile device! </p>
+        <br>
+        <p>Learning new vocabulary is exciting and a sign of progress! Now that you have your phrase on your device, check back from time to time to help solify your learning!</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="container-fluid">
+<!--     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 col-xs-offset-4 panel panel-default panel-shadow">
                 <div class="panel-body">
@@ -9,13 +9,13 @@
 
                     <div>
                         <label> Username:
-                            <input type="username" name="username" value= "daisyd" required>
+                            <input type="username" name="username" value= "minnie" required>
                         </label>
                     </div>
 
                     <div>
                         <label> Password:
-                            <input type="password" name="password" value= "ilovedonald" required>
+                            <input type="password" name="password" value= "ilovemickey" required>
                         </label>
                     </div>
 
@@ -33,7 +33,40 @@
             </div>
 
         </div>
+    </div> -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6" >
+            <img class="center-block" id="parrot-logo" src="/static/img/ParrotLogo3.png">
+        </div>
+        <div class="col-sm-6 login-right">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-7 panel panel-default panel-shadow login-box">
+                <div class="panel-body">
+                    <h1 class="text-center login-title">Log in to Parrot</h1>
+                    <form action="/login" method="POST">
+                    <div class="account-wall">
+                        <div class="profile-img img-circle center-block">
+                            <img src="/static/img/MinnieProfile.gif" alt="">
+                        </div>
+                        <form class="form-signin">
+                            <br>
+                        <input type="text" class="form-control" name="username" value="minnie" placeholder="Username" required autofocus>
+                        <br>
+                        <input type="password" name="password" value="ilovemickey" class="form-control" placeholder="Password" required>
+                        <br>
+                        <button class="btn btn-lg btn-default btn-block" type="submit">
+                            Login</button>
+                    </div>
+                        <br>
+                            <a href="/signup" class="text-center new-account">Create an account </a>
+                        <br>
+                        </form>
+                </div>
+            </div>
+        </div>
     </div>
-
+</div>
     
 {% endblock %}

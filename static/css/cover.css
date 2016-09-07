@@ -26,10 +26,14 @@
   height:98px;
 }
 /* Links */
-a,
-a:focus,
-a:hover {
+.mainpage-links {
   color: #fff;
+}
+
+.my-dropdown
+.my-dropdown:hover{
+    font-family: 'Lato', sans-serif;
+    font-color:#47525d !important;
 }
 
 /* Custom default button */
@@ -45,6 +49,11 @@ a:hover {
     color: #fff;
     background-color: #f1a977;
     border-color: 1px solid rgba(0,0,0,.09); /*set the color you want here*/
+}
+a,
+a:hover,
+a:focus{
+  color:#fff;
 }
 
 /*

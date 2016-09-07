@@ -4,16 +4,24 @@
 {% endblock %}
 {% block content %}
 
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
+                <h1 class="user-welcome">{{category.english_category}}</h1>
+            </div>
+        </div>
+    </div>
 
 <div class="row">
     {% for article in articles %}
         <div class="col-sm-12 col-md-6 col-lg-4">
-            <div class="thumbnail">
+            <div class="thumbnail panel-shadow">
                 <img src="{{article.top_image}}">
                 <div class="caption">
-                    <h4>{{ article.title }}</h4>
+                    <h4 class="thumbnail-title">{{ article.title }}</h4>
                     <a href="/article/{{article.article_id}}" 
-                    class="btn btn-primary center-block" role="button">Parrot</a>
+                    class="btn btn-default center-block" role="button">Parrot</a>
                 </div>
             </div>
         </div>

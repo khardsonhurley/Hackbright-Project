@@ -215,8 +215,9 @@ def category(category_code):
     #get all of the articles from that category code. and send them with the html.
 
     articles = Article.query.filter(Article.category_code==category_code).all()
+    category = Category.query.get(category_code)
 
-    return render_template("categorypage.html", articles=articles)
+    return render_template("categorypage.html", articles=articles, category=category)
 
 
 
@@ -405,7 +406,7 @@ def add_phrase_to_db(phrase,translation):
 if __name__ == "__main__":
     # We have to set debug=True here, since it has to be True at the point
     # that we invoke the DebugToolbarExtension
-    app.debug = False
+    app.debug = True
 
     connect_to_db(app)
 

@@ -49,24 +49,55 @@ html{
     background-color: #f1a977;
     border-color: 1px solid rgba(0,0,0,.09); /*set the color you want here*/
 }
+.btn-default{
+    box-shadow:0 2px 2px rgba(0,0,0,.28)
+}
+.navbar-btn{
+    margin-right: 20px;
+}
 
 .panel-shadow {
     background: #fff;
     box-shadow: 0 1px 4px rgba(0,0,0,.1);
     border: 1px solid rgba(0,0,0,.09);
+    margin-bottom: 10px;
 }
 .article-card {
     padding: 25px;
 }
+.user-welcome {
+    text-align: center;
+    padding-bottom: 20px;
+    color:#47525d;
+}
+.thumbnail-title{
+    color:#47525d;
+}
+
+#preference-category-header{
+    color:#f1a977;
+    display:inline;
+    font-style: normal;
+    font-weight: 500;
+    text-align: left;
+    /*color:#202020;*/
+    font-family: "Lato";
+    letter-spacing: -.028em;
+}
 .inner-article-card{
     background: #fbfbfb;
-    box-shadow: 0 1px 4px rgba(0,0,0,.1);
     border: 1px solid rgba(0,0,0,.09);
+    box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+}
+.login-box{
+    background: #fbfbfb;
+    border: 1px solid rgba(0,0,0,.09);
+    box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 }
 .panel-body {
     padding-left: 15px;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 body {
     background-color: #f3f3f3;
@@ -74,6 +105,20 @@ body {
     height:100%;
     overflow: auto;
     padding-top: 70px;
+}
+#article-link-btn{
+    position:relative;
+    top:-60px;
+    float:right;
+    left:-15px;
+}
+
+.btn{
+    font-family:'Lato', sans-serif;
+}
+.my-dropdown{
+    font-family: 'Lato', sans-serif;
+    font-color:#47525d !important;
 }
 
 .detailBox {
@@ -86,7 +131,7 @@ body {
 }
 
 .titleBox {
-    color: rgba(0,0,0,.44);
+    background-color:#fbfbfb !important;
     padding:10px;
 }
 .titleBox label{
@@ -149,7 +194,8 @@ body {
 #article-text{
     font-family: 'Droid Serif';
     font-size: 20px;
-    line-height: 1.04
+    line-height: 1.04;
+    padding: 0 30px 30px 30px !important;
 }
 .article-row{
     background-color: #fff;
@@ -177,6 +223,24 @@ body {
     overflow:hidden;
 
 }
+#parrot-logo{
+    width:500px;
+    display:center;
+    margin-top: 80px;
+}
+.profile-img{
+    width:100px;
+    overflow:hidden;
+}
+
+.login-right{
+    margin-top: 150px;
+}
+.profile-img img {
+    width:90%;
+}
+
+
 .commenterImage img {
     width:100%;
 }
@@ -184,6 +248,13 @@ body {
 .img-circle {
     border: 1px solid rgba(0,0,0,.15);
 }
+.new-account{
+    margin-bottom:50px;
+}
+.login-title{
+    color:#47525d;
+}
+
 .commentText p {
     margin:0;
 }
