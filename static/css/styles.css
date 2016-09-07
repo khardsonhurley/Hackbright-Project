@@ -74,6 +74,12 @@ html{
     color:#47525d;
 }
 
+.popover-content{
+    font-family: 'Droid Serif';
+    font-size: 15px;
+    line-height: 1.04;
+}
+
 #preference-category-header{
     color:#f1a977;
     display:inline;

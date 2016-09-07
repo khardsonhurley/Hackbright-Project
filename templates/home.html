@@ -27,30 +27,34 @@
     </style>
     <div class="site-wrapper">
 
-      <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-
+        <div class="site-wrapper-inner">
+                <div class="cover-container">
             <!-- <img src="/static/img/ParrotLogo2.png" height="400px" width=auto> -->
-            <p class="lead">An interactive spanish article translator for Spanish Language Learners</p>
-            <p class="lead">
-            {% if "user_id" not in session %}
-                <a class="btn btn-default btn-lg" href="/signup">Get started</a>
-            {% endif %} 
-            </p>
+                        <p class="slogon">Spanish Learning Made Easy.</p>
+                        <div class="col-sm-4">
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <p class="subheading">Learning a second language can be challenging. Simplify it with Parrot, the app to push your skills.</p>
+                                {% if "user_id" not in session %}
+                                    <a class="btn btn-info btn-lg" id="start-button" href="/signup">Get started</a>
+                                {% endif %} 
+                            </div>
+
+                        
+                        </div>
             <!-- <a href="/translate"><h4>Try it out!</h4></a> -->
 
-          <div class="mastfoot">
-            <div class="inner">
-              <p>Designed and developed by <a class="mainpage-links" href="https://github.com/khardsonhurley">Krishelle Hardson-Hurley</a>. Built at <a class="mainpage-links" href="https://hackbrightacademy.com/">Hackbright Academy</a>.</p>
-              <p>2016 Parrot. All Rights Reserved.</p>
+                        <div class="mastfoot">
+                            <div class="inner">
+                                  <p>Designed and developed by <a class="mainpage-links" href="https://github.com/khardsonhurley">Krishelle Hardson-Hurley</a>. Built at <a class="mainpage-links" href="https://hackbrightacademy.com/">Hackbright Academy</a>.</p>
+                                  <p>2016 Parrot. All Rights Reserved.</p>
+                            </div>
+                        </div>
+
+                <!-- </div> -->
             </div>
-          </div>
-
         </div>
-
-      </div>
-
     </div>
 
 

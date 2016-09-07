@@ -122,7 +122,7 @@ $(document).ready(function() {
             $('body').append(thePopover);
 
             //puts the popover right above the position of the selection. 
-            thePopover.offset({top: (position.top) + $(window).scrollTop(), left: position.left + (7*length)/2});
+            thePopover.offset({top: (position.top) + $(window).scrollTop(), left: position.left + (10*length)/2});
 
             //initializes the popover, without this it will not show. 
             thePopover.popover('show');
@@ -145,10 +145,8 @@ $(document).ready(function() {
         function showTranslation(translation){
             //had to make this in html because the tooltip's html value was set
             //to true so it now only takes html. Is there a better way to do this? 
-            var htmlTranslation = '<p>'+translation+'</p>';
-            //Changes the html to display the translation. Also moves the popover
-            //over slightly. Why is this? 
-            // debugger;
+            var htmlTranslation = '<p class="translated-text-tooltip">'+translation+'</p>';
+    
             $('.popover-content').html(htmlTranslation);
 
         }
