@@ -1,9 +1,9 @@
 # Parrot
 
 <!-- ![Parrot logo](/static/img/ParrotLogo3.png =250x) -->
-|<img src="/static/img/ParrotLogo3.png" alt="Parrot Logo" width="200"/>| Description |
-| -------------------------------------------------------------------- |------------:|
-###A full-stack web application built in 4 weeks as a Hackbright Fellowship final project.
+|<img src="/static/img/ParrotLogo3.png" alt="Parrot Logo" width="200"/>| A full-stack web application built in 4 weeks as a Hackbright Fellowship final project. |
+| -------------------------------------------------------------------- |----------------------------------------------------------------------------------------:|
+
 
 ###An comprehensive README is coming soon. Please see the link below for screenshots of my project. 
 "https://github.com/khardsonhurley/Hackbright-Project/tree/master/static/img/Screenshots"
