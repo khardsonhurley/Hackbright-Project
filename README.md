@@ -94,28 +94,28 @@ $ source env/bin/activate
 ```
 * Clone the directory and install all dependencies:
 ```bash
-$ git clone https://github.com/khardsonhurley/Hackbright-Project.git
+(env)$ git clone https://github.com/khardsonhurley/Hackbright-Project.git
 ```
 * Install the requirements:
 ```
-$ pip install -r requirements.txt
+(env)$ pip install -r requirements.txt
 ```
 * Create a new postgreSQL database:
 ```bash    
-$ createdb parrot
+(env)$ createdb parrot
 ```
 * Exit the PostgreSQL server (ctrl+d), open the model.py in interactive mode, and create the tables in your database:
 ```bash
-$ python -i model.py
+(env)$ python -i model.py
 >>> db.create_all()
 ```
 * Exit interactive mode (ctrl+d). Seed the database with article and dummy user data. This will take some time.
 ```bash
-$ python seed.py
+(env)$ python seed.py
 ```
-* Create a secrets.sh file. 
+(env)* Create a secrets.sh file. 
 ```
-$ touch secrets.sh YOUR_DIRECTORY_NAME_HERE
+(env)$ touch secrets.sh YOUR_DIRECTORY_NAME_HERE
 ```
 * While the database is seeding, get secret keys for [Twilio API](https://www.twilio.com/) and [Google Translate API](https://cloud.google.com/translate/docs/). Save them to secrets.sh.
 
@@ -125,11 +125,11 @@ export TWILIO_SECRET_KEY="REPLACE_WITH_YOUR_KEY"
 ```
 * Source the variables to your virtual environment.
 ```
-source secrets.sh
+(env)$ source secrets.sh
 ```
 *  Start up the flask server.
 ```bash
-$ python server.py
+(env)$ python server.py
 ```
 * Go to http://0.0.0.0:5000/ to see the web app
 
