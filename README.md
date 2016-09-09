@@ -1,11 +1,7 @@
 # Parrot
 
-A full-stack web app built in 4 weeks as Hackbright Fellowship final project.
-<img src="/static/img/Screenshots/HomePage.png" alt="Parrot Logo"/>
-Intended for users who have achieved minimum professional language proficiency, Parrot allows users to translate phrases in an article when they get stuck. Users can register, save article preferences and select articles to read. Phrases can be selected and Parrot will show a translation right above the selection! It is user-friendly and intuitive. Users can make comments and respond to comments from other users. The 'Parrot feature' allows the user to send a phrase and its translation to their mobile device for on the go review. Translated phrases are also added to a Vocabulary List that are accessible within the app.
-
-###An comprehensive README is coming soon. Please see the link below for screenshots of my project. 
-"https://github.com/khardsonhurley/Hackbright-Project/tree/master/static/img/Screenshots"
+###A full-stack web app built in 4 weeks as Hackbright Fellowship final project.
+<img src="/static/img/Screenshots/HomePage.png" alt="Parrot Mainpage Screenshot"/>
 
 ####Project Description
 Parrot is an interactive learning tool that makes learning Spanish as a second language easy, fun and social.
@@ -13,10 +9,7 @@ Parrot is an interactive learning tool that makes learning Spanish as a second l
 Intended for users who have achieved minimum professional language proficiency, Parrot allows users to translate phrases in an article when they get stuck. Users can register, save article preferences and select articles to read. Phrases can be selected and Parrot will show a translation right above the selection! It is user-friendly and intuitive. Users can make comments and respond to comments from other users. The 'Parrot feature' allows the user to send a phrase and its translation to their mobile device for on the go review. Translated phrases are also added to a Vocabulary List that are accessible within the app.
 
 ####Tech Stack
-Parrot is written in Python, JavaScript, and HTML/CSS with the use of Flask, jQuery, AJAX, JSON, SQL, Postgresql, SQLAlchemy, Jinja and Bootstrap. Article data was retrieved using newspaper Python library. Phrases are translated using Google Translate API. Messages are sent via Twilio API.
+Python, JavaScript, HTML5, CSS3, Flask, jQuery, AJAX, JSON, PostgreSQL, SQLAlchemy, Jinja and Bootstrap. Article data was retrieved using newspaper Python library. 
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+####APIs used
+Phrases are translated using Google Translate API. Messages are sent via Twilio API.
