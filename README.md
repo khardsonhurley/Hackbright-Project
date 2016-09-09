@@ -32,7 +32,19 @@ Intended for users who have achieved minimum professional language proficiency, 
 
 ##<a name="apisuser"></a>APIs used
 * Google Translate API
-* Twilio API.
+* Twilio API
 
-####Features
+## Features
+Users can create an account and log into their account.
+<img src="/static/img/Screenshots/LoginPage.png" alt="Parrot Login page Screenshot"/>
 
+Once users have logged in, users are presented with three articles from each of their category preferences.
+<img src="/static/img/Screenshots/ProfilePage.png" alt="Parrot Profile page Screenshot"/>
+
+<!-- If the user does not like the articles provided, they may chose to see more from that category.  -->
+
+When the user clicks "Parrot," they are directed to a page displaying the article. As the user is reading, if they get stuck, they can highlight a phrase and a popover will display containing three buttons:
+* Translate
+* Comment
+* Send Message
+<img src="/static/img/Screenshots/TranslationButton.png" alt="Translation Button Screenshot"/>
