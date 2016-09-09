@@ -11,3 +11,9 @@ Intended for users who have achieved minimum professional language proficiency, 
 
 ####Tech Stack
 Parrot is written in Python, JavaScript, and HTML/CSS with the use of Flask, jQuery, AJAX, JSON, SQL, Postgresql, SQLAlchemy, Jinja and Bootstrap. Article data was retrieved using newspaper Python library. Phrases are translated using Google Translate API. Messages are sent via Twilio API.
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
