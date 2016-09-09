@@ -1,6 +1,6 @@
 # Parrot
 
-###A full-stack web app built in 4 weeks as Hackbright Fellowship final project.
+####A full-stack web application built in 4 weeks as Hackbright Fellowship final project.
 <img src="/static/img/Screenshots/HomePage.png" alt="Parrot Mainpage Screenshot"/>
 
 ## Description
@@ -44,14 +44,16 @@ Once logged in, users are presented with three articles from each of their categ
 <!-- If the user does not like the articles provided, they may chose to see more from that category.  -->
 
 When the user clicks "Parrot," they are directed to a page displaying the article. As the user is reading, if they get stuck, they can highlight a phrase and a popover will display containing three buttons:
-* Translate
-* Comment
-* Send Message
+* [Translate][#translate]
+* [Comment][#comment]
+* [Send Message][#twilio]
 <img src="/static/img/Screenshots/TranslationButton.png" alt="Translation Button Screenshot"/>
 
+####<a name="translate"></a>Translate
 If the user clicks the "Translate" Button, a call is made to Google Translate API and the translation is displayed in the popover. The phrase and translation are also stored in the database.
 <img src="/static/img/Screenshots/TranslationPopover.png" alt="Translation Popover Screenshot"/>
 
+####<a name="comment"></a>Comments
 If the user finds a phrase that might be an idiom or perhaps a phrase that might require additional context, they could chose to click the "Comment" Button. 
 <img src="/static/img/Screenshots/CommentButton.png" alt="Comment Button Screenshot"/>
 
@@ -61,8 +63,15 @@ A comment window will display in-line with the selection. When the user makes a 
 Once comments are made, the user can click the words inside of the grey rectangle to view the comments.
 <img src="/static/img/Screenshots/CommentLink.png" alt="Parrot Loginpage Screenshot"/> 
 
-The user can event see comments made by other users. 
+The user can even see older comments made by other users and comment back to them. 
 <img src="/static/img/Screenshots/ArticleComments.png" alt="Article Comments Screenshot"/>
+
+####<a name="twilio"></a>Send Message
+If the user is reading and wants to remember the new phrase they have learned and study on-the-go, they can send a text message to their mobile device containing the origin phrase and its translation. 
+<img src="/static/img/Screenshots/TwilioButton.png" alt="Twilio Button Screenshot"/>
+<img src="/static/img/Screenshots/TwilioMessage.png" alt="Twilio Message Screenshot"/>
+
+
 
 
 
