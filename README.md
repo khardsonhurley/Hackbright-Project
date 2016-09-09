@@ -58,7 +58,11 @@ If the user clicks the "Translate" Button, a call is made to Google Translate AP
 If the user finds a phrase that might be an idiom or perhaps a phrase that might require additional context, they could chose to click the "Comment" Button. 
 <img src="/static/img/Screenshots/CommentButton.png" alt="Comment Button Screenshot"/>
 
-A comment window will display in-line with the selection. When the user makes a comments, a grey rectangle will appear over the phrase that has an attached comment. The user can click the words inside of the grey rectangle to view the comments which are viewable to other users who read the same article. 
+A comment window will display in-line with the selection. 
+<img src="/static/img/Screenshots/CommentWindow.png" alt="Comment Window Screenshot"/>
+
+
+When the user makes a comments, a grey rectangle will appear over the phrase that has an attached comment. The user can click the words inside of the grey rectangle to view the comments which are viewable to other users who read the same article. 
 <img src="/static/img/Screenshots/CommentLink.png" alt="Grey Rectangle Screenshot"/> 
 <img src="/static/img/Screenshots/CommentLinkWindow.png" alt="Comment Link Screenshot"/>
 
