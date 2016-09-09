@@ -113,7 +113,7 @@ $ source env/bin/activate
 ```bash
 (env)$ python seed.py
 ```
-(env)* Create a secrets.sh file. 
+* Create a secrets.sh file. 
 ```
 (env)$ touch secrets.sh YOUR_DIRECTORY_NAME_HERE
 ```
