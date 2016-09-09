@@ -80,7 +80,7 @@ If the user is reading and wants to remember the new phrase they have learned an
 * Use of various shades of white to create a clean and crisp look and maintain focus on learning while reading.
 
 ## <a name="installation"></a>Installation Instructions
-### Parrot has not been deployed, to run the app locally on your machine follow these instructions:
+#### Parrot has not yet been deployed, to run the app locally on your machine follow these instructions:
 
 * You must have the following programs already installed on your machine:
     * [Python 2.7](https://www.python.org/downloads/)
@@ -89,8 +89,8 @@ If the user is reading and wants to remember the new phrase they have learned an
 
 * Create and activate a virtual environment inside your project directory:
 ```
-virtualenv env
-source env/bin/activate
+$ virtualenv env
+$ source env/bin/activate
 ```
 * Clone the directory and install all dependencies:
 ```bash
@@ -109,12 +109,10 @@ $ createdb parrot
 $ python -i model.py
 >>> db.create_all()
 ```
-* Quit interactive mode (ctrl+d). Seed the database with article and dummy user data. 
+* Exit interactive mode (ctrl+d). Seed the database with article and dummy user data. This will take some time.
 ```bash
 $ python seed.py
 ```
-This will take some time.
-
 * Create a secrets.sh file. 
 ```
 $ touch secrets.sh YOUR_DIRECTORY_NAME_HERE
@@ -125,18 +123,15 @@ $ touch secrets.sh YOUR_DIRECTORY_NAME_HERE
 export GOOGLE_TRANSLATE_KEY="REPLACE_WITH_YOUR_KEY"  
 export TWILIO_SECRET_KEY="REPLACE_WITH_YOUR_KEY"  
 ```
-* Source the variables to your evt:
-
+* Source the variables to your virtual environment.
 ```
 source secrets.sh
 ```
-*  and start up the flask server:
+*  Start up the flask server.
 ```bash
 $ python server.py
 ```
 * Go to http://0.0.0.0:5000/ to see the web app
-
-
 
 ## <a name="author"></a>About the Author
 
