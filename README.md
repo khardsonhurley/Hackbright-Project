@@ -1,6 +1,7 @@
 # Parrot
 
-![Parrot logo](/static/img/ParrotLogo3.png =250x)
+<!-- ![Parrot logo](/static/img/ParrotLogo3.png =250x) -->
+<img src="/static/img/ParrotLogo3.png" alt="Parrot Logo" style="width: 200px;"/>
 ###A full-stack web application built in 4 weeks as a Hackbright Fellowship final project.
 
 ###An comprehensive README is coming soon. Please see the link below for screenshots of my project. 
