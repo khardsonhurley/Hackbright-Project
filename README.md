@@ -16,19 +16,19 @@ Intended for users who have achieved minimum professional language proficiency, 
 * [Author](#author)
 
 ## <a name="technologiesused"></a>Technologies Used
-*Python
-*JavaScript
-*Flask
-*HTML5
-*CSS3
-*jQuery
-*AJAX
-*JSON
-*PostgreSQL
-*SQLAlchemy
-*Jinja 
-*Bootstrap 
-*<a src="https://pypi.python.org/pypi/newspaper">Newspaper Python Library</a> 
+* Python
+* JavaScript
+* Flask
+* HTML5
+* CSS3
+* jQuery
+* AJAX
+* JSON
+* PostgreSQL
+* SQLAlchemy
+* Jinja 
+* Bootstrap 
+* <a src="https://pypi.python.org/pypi/newspaper">Newspaper Python Library</a> 
 
 ####APIs used
 Phrases are translated using Google Translate API. Messages are sent via Twilio API.
