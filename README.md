@@ -12,8 +12,9 @@ Intended for users who have achieved minimum professional language proficiency, 
 * [Technologies Used](#technologiesused)
 * [APIs Used](#apisused)
 * [Features](#features)
-* [Installation Instructions](#installationinstructions)
-* [Author](#author)
+* [Design](#design)
+* [Installation Instructions](#installation)
+* [About the Author](#author)
 
 ## <a name="technologiesused"></a>Technologies Used
 * Python 2
@@ -46,14 +47,14 @@ Once logged in, users are presented with three articles from each of their categ
 When the user clicks "Parrot," they are directed to a page displaying the article. As the user is reading, if they get stuck, they can highlight a phrase and a popover will display containing three buttons:
 * [Translate](#translate)
 * [Comment](#comment)
-* [Send Message](#twilio)
+* [Send SMS](#twilio)
 <img src="/static/img/Screenshots/TranslationButton.png" alt="Translation Button Screenshot"/>
 
 ####<a name="translate"></a>Translate
 If the user clicks the "Translate" Button, a call is made to Google Translate API and the translation is displayed in the popover. The phrase and translation are also stored in the database.
 <img src="/static/img/Screenshots/TranslationPopover.png" alt="Translation Popover Screenshot"/>
 
-####<a name="comment"></a>Comments
+####<a name="comment"></a>Comment
 If the user finds a phrase that might be an idiom or perhaps a phrase that might require additional context, they could chose to click the "Comment" Button. 
 <img src="/static/img/Screenshots/CommentButton.png" alt="Comment Button Screenshot"/>
 
@@ -66,10 +67,26 @@ Once comments are made, the user can click the words inside of the grey rectangl
 The user can even see older comments made by other users and comment back to them. 
 <img src="/static/img/Screenshots/ArticleComments.png" alt="Article Comments Screenshot"/>
 
-####<a name="twilio"></a>Send Message
+####<a name="twilio"></a>Send SMS Message
 If the user is reading and wants to remember the new phrase they have learned and study on-the-go, they can send a text message to their mobile device containing the origin phrase and its translation. 
 <img src="/static/img/Screenshots/TwilioButton.png" alt="Twilio Button Screenshot"/>
 <img src="/static/img/Screenshots/TwilioMessage.png" alt="Twilio Message Screenshot"/>
+
+## <a name="design"></a>Design
+* All logo design done by the [author](https://www.linkedin.com/in/khardsonhurley) using Adobe Illustrator.
+* Photograph taken by author.
+* Bold typeface chosen for article titles to draw attention.
+* Serif typeface for article body chosen to mimic the look of a physical newspaper. 
+* Use of various shades of white to create a clean and crisp look and maintain focus on learning while reading.
+
+## <a name="installation"></a>Installation Instructions
+
+
+
+
+## <a name="author"></a>About the Author
+
+Krishelle graduated Summa Cum Laude from the University of San Diego with a dual major in Mathematics and Spanish and a Teaching Credential. Prior to Hackbright, she taught High School Math and Spanish, while she pursued a Masters Degree focused on Math and Technology Education. After teaching for six years, Krishelle discovered her passion for designing tools that make processes more efficient. She realized that software engineering would be the perfect opportunity to combine this passion with her love for problem solving. Krishelle's love for learning and making an impact run strong and she is excited to contribute her creativity to a full-stack software development role. Learn more about Krishelle [here](https://www.linkedin.com/in/khardsonhurley). 
 
 
 
