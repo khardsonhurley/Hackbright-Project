@@ -13,7 +13,7 @@ Intended for users who have achieved minimum professional language proficiency, 
 * [APIs Used](#apisused)
 * [Features](#features)
 * [Design](#design)
-* [Next Steps](#nextsteps)
+* [Project Next Steps](#nextsteps)
 * [Installation Instructions](#installation)
 * [About the Author](#author)
 
@@ -83,7 +83,7 @@ If the user is reading and wants to remember the new phrase they have learned an
 * Serif typeface for article body chosen to mimic the look of a physical newspaper. 
 * Use of various shades of white to create a clean and crisp look and maintain focus on learning while reading.
 
-####<a name="nextsteps"></a>Next Steps
+## <a name="nextsteps"></a>Project Next Steps
 * Offer Parrot in other languages. 
 * Allow the user to chose their news source.
 * Allow for live rss feed.
