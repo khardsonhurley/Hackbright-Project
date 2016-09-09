@@ -30,7 +30,7 @@ Intended for users who have achieved minimum professional language proficiency, 
 * Bootstrap 
 * [Newspaper Python Library](https://pypi.python.org/pypi/newspaper)
 
-##<a name="apisuser"></a>APIs used
+##<a name="apisused"></a>APIs used
 * Google Translate API
 * Twilio API
 
@@ -44,9 +44,9 @@ Once logged in, users are presented with three articles from each of their categ
 <!-- If the user does not like the articles provided, they may chose to see more from that category.  -->
 
 When the user clicks "Parrot," they are directed to a page displaying the article. As the user is reading, if they get stuck, they can highlight a phrase and a popover will display containing three buttons:
-* [Translate][#translate]
-* [Comment][#comment]
-* [Send Message][#twilio]
+* [Translate](#translate)
+* [Comment](#comment)
+* [Send Message](#twilio)
 <img src="/static/img/Screenshots/TranslationButton.png" alt="Translation Button Screenshot"/>
 
 ####<a name="translate"></a>Translate
