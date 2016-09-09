@@ -10,13 +10,13 @@ Intended for users who have achieved minimum professional language proficiency, 
 
 ## Table of Contents
 * [Technologies Used](#technologiesused)
+* [APIs Used](#apisused)
 * [Features](#features)
-* [Test Coverage](#testcoverage)
 * [Installation Instructions](#installationinstructions)
 * [Author](#author)
 
 ## <a name="technologiesused"></a>Technologies Used
-* Python
+* Python 2
 * JavaScript
 * Flask
 * HTML5
@@ -30,8 +30,9 @@ Intended for users who have achieved minimum professional language proficiency, 
 * Bootstrap 
 * [Newspaper Python Library](https://pypi.python.org/pypi/newspaper)
 
-####APIs used
-Phrases are translated using Google Translate API. Messages are sent via Twilio API.
+##<a name="apisuser"></a>APIs used
+* Google Translate API
+* Twilio API.
 
 ####Features
 
