@@ -38,7 +38,7 @@ Intended for users who have achieved minimum professional language proficiency, 
 Users can create an account and log into their account.
 <img src="/static/img/Screenshots/LoginPage.png" alt="Parrot Login page Screenshot"/>
 
-Once users have logged in, users are presented with three articles from each of their category preferences.
+Once logged in, users are presented with three articles from each of their category preferences.
 <img src="/static/img/Screenshots/ProfilePage.png" alt="Parrot Profile page Screenshot"/>
 
 <!-- If the user does not like the articles provided, they may chose to see more from that category.  -->
@@ -48,3 +48,27 @@ When the user clicks "Parrot," they are directed to a page displaying the articl
 * Comment
 * Send Message
 <img src="/static/img/Screenshots/TranslationButton.png" alt="Translation Button Screenshot"/>
+
+If the user clicks the "Translate" Button, a call is made to Google Translate API and the translation is displayed in the popover. The phrase and translation are also stored in the database.
+<img src="/static/img/Screenshots/TranslationPopover.png" alt="Translation Popover Screenshot"/>
+
+If the user finds a phrase that might be an idiom or perhaps a phrase that might require additional context, they could chose to click the "Comment" Button. 
+<img src="/static/img/Screenshots/CommentButton.png" alt="Comment Button Screenshot"/>
+
+A comment window will display in-line with the selection. When the user makes a comments, a grey rectangle will appear over the phrase that has an attached comment. These comments are viewable to other users who read the same article. 
+<img src="/static/img/Screenshots/CommentLinkWindow.png" alt="Comment Link Screenshot"/>
+
+Once comments are made, the user can click the words inside of the grey rectangle to view the comments.
+<img src="/static/img/Screenshots/CommentLink.png" alt="Parrot Loginpage Screenshot"/> 
+
+The user can event see comments made by other users. 
+<img src="/static/img/Screenshots/ArticleComments.png" alt="Article Comments Screenshot"/>
+
+
+
+
+
+
+
+
+
