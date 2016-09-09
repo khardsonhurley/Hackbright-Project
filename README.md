@@ -13,6 +13,7 @@ Intended for users who have achieved minimum professional language proficiency, 
 * [APIs Used](#apisused)
 * [Features](#features)
 * [Design](#design)
+* [Next Steps](#nextsteps)
 * [Installation Instructions](#installation)
 * [About the Author](#author)
 
@@ -75,11 +76,20 @@ If the user is reading and wants to remember the new phrase they have learned an
 <img src="/static/img/Screenshots/TwilioMessage.png" alt="Twilio Message Screenshot"/>
 
 ## <a name="design"></a>Design
+* Design elements implemented using [Bootstrap](http://getbootstrap.com/), HTML5 and CSS3. 
 * All logo design done by the [author](https://www.linkedin.com/in/khardsonhurley) using Adobe Illustrator.
 * Photograph taken by author.
-* Bold typeface chosen for article titles to draw attention.
+* Bold typeface chosen for article titles to draw attention to strong headlines.
 * Serif typeface for article body chosen to mimic the look of a physical newspaper. 
 * Use of various shades of white to create a clean and crisp look and maintain focus on learning while reading.
+
+####<a name="nextsteps"></a>Next Steps
+* Offer Parrot in other languages. 
+* Allow the user to chose their news source.
+* Allow for live rss feed.
+* Schedule SMS messenger to send quiz questions to check if the user remembers meaning of words they have looked up.
+* Recommend articles to the user.
+* Recommend commonly translated words for the user to read over before reading the article. 
 
 ## <a name="installation"></a>Installation Instructions
 #### Parrot has not yet been deployed, to run the app locally on your machine follow these instructions:
@@ -115,7 +125,7 @@ $ source env/bin/activate
 ```bash
 (env)$ python seed.py
 ```
-* Create a secrets.sh file. 
+* Create a <kbd>secrets.sh</kbd> file. 
 ```
 (env)$ touch secrets.sh YOUR_DIRECTORY_NAME_HERE
 ```
