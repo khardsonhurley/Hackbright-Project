@@ -28,7 +28,7 @@ Intended for users who have achieved minimum professional language proficiency, 
 * SQLAlchemy
 * Jinja 
 * Bootstrap 
-* <a src="https://pypi.python.org/pypi/newspaper">Newspaper Python Library</a> 
+* <a src="https://pypi.python.org/pypi/newspaper"></a>Newspaper Python Library
 
 ####APIs used
 Phrases are translated using Google Translate API. Messages are sent via Twilio API.
