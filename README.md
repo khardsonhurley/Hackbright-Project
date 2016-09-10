@@ -63,7 +63,7 @@ A comment window will display in-line with the selection.
 <img src="/static/img/Screenshots/CommentWindow.png" alt="Comment Window Screenshot"/>
 
 
-When the user makes a comments, a grey rectangle will appear over the phrase that has an attached comment. The user can click the words inside of the grey rectangle to view the comments which are viewable to other users who read the same article. 
+When the user makes a comment, a grey rectangle will appear over the phrase that has an attached comment. The user can click the words inside of the grey rectangle to view the comments which are viewable to other users who read the same article. 
 <img src="/static/img/Screenshots/CommentLink.png" alt="Grey Rectangle Screenshot"/> 
 <img src="/static/img/Screenshots/CommentLinkWindow.png" alt="Comment Link Screenshot"/>
 
@@ -147,7 +147,7 @@ export TWILIO_SECRET_KEY="REPLACE_WITH_YOUR_KEY"
 
 ## <a name="author"></a>About the Author
 
-Krishelle graduated Summa Cum Laude from the University of San Diego with a dual major in Mathematics and Spanish and a Teaching Credential. Prior to Hackbright, she taught High School Math and Spanish, while she pursued a Masters Degree focused on Math and Technology Education. After teaching for six years, Krishelle discovered her passion for designing tools that make processes more efficient. She realized that software engineering would be the perfect opportunity to combine this passion with her love for problem solving. Krishelle's love for learning and making an impact run strong and she is excited to contribute her creativity to a full-stack software development role. Learn more about Krishelle [here](https://www.linkedin.com/in/khardsonhurley). 
+Krishelle graduated Summa Cum Laude from the University of San Diego with a dual major in Mathematics and Spanish and a Teaching Credential. Prior to Hackbright, she taught High School Math and Spanish, while she pursued a Masters Degree focused on Math and Technology Education. After teaching for six years, Krishelle discovered her passion for designing tools that make processes more efficient. She realized that software engineering would be the perfect opportunity to combine this passion with her love for problem solving. Krishelle's love for learning and making an impact run strong, and she is excited to contribute her creativity to a full-stack software development role. Learn more about Krishelle [here](https://www.linkedin.com/in/khardsonhurley). 
 
 
 
