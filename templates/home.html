@@ -3,7 +3,7 @@
   <link href="/static/css/cover.css" rel="stylesheet">
 {% endblock %}
 {% block signuplink %}
-<a class="signup-link" href="#">Don't have an account? Sign up here</a>
+<a class="signup-link" href="/signup">Don't have an account? Sign up here</a>
 <!-- <a class="signup-link" href="/signup">Don't have an account? Sign up here</a> -->
 {% endblock %}
 {% block content %}
@@ -41,23 +41,20 @@
                             <div class="col-sm-4">
                                 <p class="subheading">Learning a second language can be challenging. Simplify it with Parrot, the app that talks back.</p>
                                 {% if "user_id" not in session %}
-                                    <a href="#"><button class="btn btn-info btn-lg" id="start-button">Get started</button><a>
-                                    <!-- <a href="/signup"><button class="btn btn-info btn-lg" id="start-button">Get started</button><a> -->
+                                    <a href="/signup"><button class="btn btn-info btn-lg" id="start-button">Get started</button></a>
                                 {% endif %} 
                             </div>
 
                         
                         </div>
-            <!-- <a href="/translate"><h4>Try it out!</h4></a> -->
 
                         <div class="mastfoot">
                             <div class="inner">
-                                  <p>Designed and developed by <a class="mainpage-links" href="https://github.com/khardsonhurley">Krishelle Hardson-Hurley</a>. Built at <a class="mainpage-links" href="https://hackbrightacademy.com/">Hackbright Academy</a>.</p>
+                                  Designed and developed by <a class="mainpage-links" href="https://github.com/khardsonhurley">Krishelle Hardson-Hurley</a>. Built at <a class="mainpage-links" href="https://hackbrightacademy.com/">Hackbright Academy</a>.
                                   <p>2016 Parrot. All Rights Reserved.</p>
                             </div>
                         </div>
 
-                <!-- </div> -->
             </div>
         </div>
     </div>

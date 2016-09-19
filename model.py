@@ -174,6 +174,7 @@ class Comment(db.Model):
 
     ##### Relationships #####
     article = db.relationship("Article", backref='comments')
+    
     user = db.relationship('User', backref='comments')
 
 

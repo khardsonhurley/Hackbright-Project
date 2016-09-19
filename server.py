@@ -70,7 +70,7 @@ def signup_process():
         #Creates new user. LATER CHECK IF USER EXISTS!! 
         new_user = User(email=email, username=username, password=password,
                         first_name=first_name, last_name=last_name,
-                        phone=phone, language=language, 
+                        phone=phone, language=language,
                         language_level=language_level)
 
         db.session.add(new_user)
@@ -171,8 +171,6 @@ def profile(user_id):
         articles = Article.query.filter(Article.category_code==preference.category_code).all()
         preferences_dict[preference]=sample(articles,3)
 
-    print preferences_dict  
-    print 'im in the profile route'
 
     return render_template("profile.html", user=user, preferences_dict=preferences_dict)
 
@@ -182,7 +180,7 @@ def article(article_id):
     #Need this to get the article object from the DB. Note this object does not
     #contain the text of the object, just selected metadata that is stored in the DB. 
     articleobj = Article.query.filter(Article.article_id==article_id).first()
-
+    print articleobj.url
     #Instantiate an instance of the class Article [from newspaper library], the
     #__init__ for this class requires a url retrieved from the articleobj above.
     #This allows us to instantiate another object that has all of the metadata 
@@ -192,10 +190,6 @@ def article(article_id):
     articleobj.download()
     #Parse through the article. 
     articleobj.parse()
-
-    # from newspaper import fulltext
-
-    # articleobj.
 
     #Remove an article_id that is in the session and replace it with new 
     #article_id, note that if you return to the same article, its okay becuase

@@ -1,7 +1,53 @@
 {% extends 'base.html' %}
 {% block content %}
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6" >
+            <img class="center-block" id="parrot-logo" src="/static/img/ParrotLogo3.png">
+        </div>
+        <div class="col-sm-6 login-right">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-7 panel panel-default panel-shadow login-box">
+                <div class="panel-body">
+                    <h1 class="text-center login-title">Sign up for Parrot</h1>
+                    <form action="/signup" method="POST">
+                    <div class="account-wall">
+                        <form class="form-signup">
+                            <br>
+                        <input type="text" class="form-control" placeholder="First Name" name="firstname" required autofocus>
+                        <br>
+                        <input type="text" class="form-control" placeholder="Last Name" name="lastname" required autofocus>
+                        <br>
+                        <input type="text" class="form-control" placeholder="Email Address" name="email" required autofocus>
+                        <br>
+                        <input type="text" class="form-control" placeholder="Phone Number (SMS Capable)" name="phone" required autofocus>
+                        <br>
+                        <input type="text" name="username" class="form-control"  placeholder="Username" required autofocus>
+                        <br>
+                        <input type="password" name="password" class="form-control" placeholder="Password" required>
+                        <br>
+                        <div class="">
+                        <label>Spanish Language Proficiency:<label> 
+                                <label class="radio-inline"><input type="radio" name="langlevel" value="novice">Novice</label>
+                                <label class="radio-inline"><input type="radio" name="langlevel" value="intermediate">Intermediate</label>
+                                <label class="radio-inline"><input type="radio" name="langlevel" value="advanced">Advanced</label>
+                        </div>
+                        <button class="btn btn-lg btn-default btn-block" type="submit">
+                            Sign Up!</button>
+                    </div>
+                        <br>
+                            <a href="/login" class="text-center">Already have an account? Click to Log in </a>
+                        <br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <h1>Sign Up for Parrot</h1>
+
+    <!-- <h1>Sign Up for Parrot</h1>
     <form action="/signup" method="POST">
 
         <div>
@@ -56,5 +102,5 @@
             <input class= "btn btn-default btn-lg" type="submit" value="Sign Up">
         </div>
 
-    </form>
+    </form> -->
 {% endblock %}

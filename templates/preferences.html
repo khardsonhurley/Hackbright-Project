@@ -1,50 +1,66 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <h1>Hang in there, {{ user.first_name }}! You're almost done!</h1>
+    <h1 class="user-welcome">Hang in there, {{ user.first_name }}! You're almost done!</h1>
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6" >
+            <img class="center-block" id="parrot-logo" src="/static/img/ParrotLogo3.png">
+        </div>
+        <div class="col-sm-6 login-right">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-7 panel panel-default panel-shadow login-box">
+                <div class="panel-body">
+                    
+    
 
     <form action="/preferences/{{user.user_id}}" method="POST">
 
-        <h2>Select your article topic preferences:</h2>
+        <h1 class="text-center login-title">Select your article topic preferences</h1>
+                    <form action="/signup" method="POST">
+                    <div class="account-wall">
+                        <form class="form-signup">
+        <br>
         <div>
-        Preference #1: 
-        <select name="preference_1">
-            <option value="" disabled selected> Select your preference</option>
-            {% for category in categories %}
+
+              <select class="form-control" name="preference_1" id="sel1">
+                <option value="" disabled selected> Select Preference #1</option>
+                {% for category in categories %}
                 <option value= "{{category.category_code}}"> {{category.english_category}}</option>
-            {% endfor %}
-        </select>
+                {% endfor %}
+                </select>
+
+        </div>
+
+        <br>
+                <div>
+              <select class="form-control" name="preference_2" id="sel2">
+                <option value="" disabled selected> Select Preference #2</option>
+                {% for category in categories %}
+                <option value= "{{category.category_code}}"> {{category.english_category}}</option>
+                {% endfor %}
+                </select>
+
         </div>
 
         <br>
 
         <div>
-        Preference #2: 
-        <select name="preference_2">
-            <option value="" disabled selected> Select your preference</option>
-            {% for category in categories %}
+              <select class="form-control" name="preference_3" id="sel3 ">
+                <option value="" disabled selected> Select Preference #3</option>
+                {% for category in categories %}
                 <option value= "{{category.category_code}}"> {{category.english_category}}</option>
-            {% endfor %}
-        </select>
+                {% endfor %}
+                </select>
+
         </div>
 
         <br>
 
         <div>
-        Preference #3: 
-        <select name="preference_3">
-            <option value="" disabled selected> Select your preference</option>
-            {% for category in categories %}
-                <option value= "{{category.category_code}}"> {{category.english_category}}</option>
-            {% endfor %}
-
-        </select>
-        </div>
-
-        <br>
-
-        <div>
-            <input type="submit" value="Save Preferences">
+            <button class="btn btn-lg btn-default btn-block" type="submit">
+                            Save Preferences</button>
         </div>
 
     </form>
