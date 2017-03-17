@@ -1,6 +1,6 @@
 # Parrot
 
-####A full-stack web application built in 4 weeks as Hackbright Fellowship final project.
+#### A full-stack web application built in 4 weeks as Hackbright Fellowship final project.
 <img src="/static/img/Screenshots/HomePage.png" alt="Parrot Mainpage Screenshot"/>
 
 ## Description
