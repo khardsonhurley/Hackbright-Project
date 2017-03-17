@@ -32,7 +32,7 @@ Intended for users who have achieved minimum professional language proficiency, 
 * Bootstrap 
 * [Newspaper Python Library](https://pypi.python.org/pypi/newspaper)
 
-##<a name="apisused"></a>APIs used
+## <a name="apisused"></a>APIs used
 * Google Translate API
 * Twilio API
 
@@ -51,11 +51,11 @@ When the user clicks "Parrot," they are directed to a page displaying the articl
 * [Send SMS](#twilio)
 <img src="/static/img/Screenshots/TranslationButton.png" alt="Translation Button Screenshot"/>
 
-####<a name="translate"></a>Translate
+#### <a name="translate"></a>Translate
 If the user clicks the "Translate" Button, a call is made to Google Translate API and the translation is displayed in the popover. The phrase and translation are also stored in the database.
 <img src="/static/img/Screenshots/TranslationPopover.png" alt="Translation Popover Screenshot"/>
 
-####<a name="comment"></a>Comment
+#### <a name="comment"></a>Comment
 If the user finds a phrase that might be an idiom or perhaps a phrase that might require additional context, they could chose to click the "Comment" Button. 
 <img src="/static/img/Screenshots/CommentButton.png" alt="Comment Button Screenshot"/>
 
@@ -70,7 +70,7 @@ When the user makes a comment, a grey rectangle will appear over the phrase that
 The user can even see older comments made by other users and comment back to them. 
 <img src="/static/img/Screenshots/ArticleComments.png" alt="Article Comments Screenshot"/>
 
-####<a name="twilio"></a>Send SMS Message
+#### <a name="twilio"></a>Send SMS Message
 If the user is reading and wants to remember the new phrase they have learned and study on-the-go, they can send a text message to their mobile device containing the origin phrase and its translation. 
 <img src="/static/img/Screenshots/TwilioButton.png" alt="Twilio Button Screenshot"/>
 <img src="/static/img/Screenshots/TwilioMessage.png" alt="Twilio Message Screenshot"/>
